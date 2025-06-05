@@ -24,24 +24,24 @@
             --dc-accent-green: #3EFF9A;
             --dc-accent-green-hover: #6BFFB8;
             --dc-accent-red: #FF4F4F;
-            --dc-accent-red-hover: #FF7272; 
+            --dc-accent-red-hover: #FF7272;
             --dc-text-primary: #F0F8FF;
             --dc-text-secondary: #A0B0C0;
             --dc-border-color: #1D232C;
             --dc-aurora-opacity: 0.07;
 
             /* Light Cyber */
-            --lc-primary-bg: #EFFBFF; 
+            --lc-primary-bg: #EFFBFF;
             --lc-secondary-bg: #FFFFFF;
             --lc-tertiary-bg: #E0F5FA;
-            --lc-accent-primary: #00A0B0; 
+            --lc-accent-primary: #00A0B0;
             --lc-accent-primary-hover: #007A87;
             --lc-accent-primary-glow: rgba(0, 160, 176, 0.2);
-            --lc-accent-secondary: #D9006C; 
+            --lc-accent-secondary: #D9006C;
             --lc-accent-secondary-hover: #B30059;
             --lc-accent-secondary-glow: rgba(217, 0, 108, 0.15);
             --lc-accent-green: #00C853;
-            --lc-accent-green-hover: #00E676; 
+            --lc-accent-green-hover: #00E676;
             --lc-accent-red: #D50000;
             --lc-accent-red-hover: #FF1744;
             --lc-text-primary: #051D2A;
@@ -61,9 +61,9 @@
             --dz-accent-secondary-hover: #F9F07A;
             --dz-accent-secondary-glow: rgba(246, 224, 94, 0.15);
             --dz-accent-green: #68D391;
-            --dz-accent-green-hover: #81E6D9; 
+            --dz-accent-green-hover: #81E6D9;
             --dz-accent-red: #FC8181;
-            --dz-accent-red-hover: #FEB2B2; 
+            --dz-accent-red-hover: #FEB2B2;
             --dz-text-primary: #E2E8F0;
             --dz-text-secondary: #A0AEC0;
             --dz-border-color: #2D3748;
@@ -80,72 +80,74 @@
             --lz-accent-secondary-hover: #718096;
             --lz-accent-secondary-glow: rgba(160, 174, 192, 0.1);
             --lz-accent-green: #38A169;
-            --lz-accent-green-hover: #2F855A; 
+            --lz-accent-green-hover: #2F855A;
             --lz-accent-red: #E53E3E;
-            --lz-accent-red-hover: #C53030; 
+            --lz-accent-red-hover: #C53030;
             --lz-text-primary: #1A202C;
             --lz-text-secondary: #4A5568;
             --lz-border-color: #CBD5E0;
             --lz-aurora-opacity: 0.02;
 
-
-            /* Applied Variables (Initially Dark Cyber) */
-            --primary-bg: var(--dc-primary-bg);
-            --secondary-bg: var(--dc-secondary-bg);
-            --tertiary-bg: var(--dc-tertiary-bg);
-            --accent-primary: var(--dc-accent-primary);
-            --accent-primary-hover: var(--dc-accent-primary-hover);
-            --accent-primary-glow: var(--dc-accent-primary-glow);
-            --accent-secondary: var(--dc-accent-secondary);
-            --accent-secondary-hover: var(--dc-accent-secondary-hover);
-            --accent-secondary-glow: var(--dc-accent-secondary-glow);
-            --accent-green: var(--dc-accent-green);
-            --accent-green-hover: var(--dc-accent-green-hover);
-            --accent-red: var(--dc-accent-red);
-            --accent-red-hover: var(--dc-accent-red-hover); 
-            --text-primary: var(--dc-text-primary);
-            --text-secondary: var(--dc-text-secondary);
-            --text-interactive: var(--dc-accent-primary-hover); 
-            --border-color: var(--dc-border-color);
-            --card-shadow: var(--dm-card-shadow); 
-            --aurora-opacity: var(--dc-aurora-opacity);
-            --aurora-1: #00CFDE; 
-            --aurora-2: #F02D8E;
-            --aurora-3: #FFB300;
-            --aurora-4: #7C4DFF;
+            /* Applied Variables (Initially Dark Zenith now) */
+            --primary-bg: var(--dz-primary-bg);
+            --secondary-bg: var(--dz-secondary-bg);
+            --tertiary-bg: var(--dz-tertiary-bg);
+            --accent-primary: var(--dz-accent-primary);
+            --accent-primary-hover: var(--dz-accent-primary-hover);
+            --accent-primary-glow: var(--dz-accent-primary-glow);
+            --accent-secondary: var(--dz-accent-secondary);
+            --accent-secondary-hover: var(--dz-accent-secondary-hover);
+            --accent-secondary-glow: var(--dz-accent-secondary-glow);
+            --accent-green: var(--dz-accent-green);
+            --accent-green-hover: var(--dz-accent-green-hover);
+            --accent-red: var(--dz-accent-red);
+            --accent-red-hover: var(--dz-accent-red-hover);
+            --text-primary: var(--dz-text-primary);
+            --text-secondary: var(--dz-text-secondary);
+            --text-interactive: var(--dz-accent-primary-hover);
+            --border-color: var(--dz-border-color);
+            --card-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            --aurora-opacity: var(--dz-aurora-opacity);
+            --aurora-1: #4FD1C5; /* Teal for Dark Zenith aurora */
+            --aurora-2: #F6E05E; /* Muted Gold for Dark Zenith aurora */
+            --aurora-3: #68D391; /* Greenish for Dark Zenith */
+            --aurora-4: #FC8181; /* Reddish for Dark Zenith */
         }
-        
-        body.theme-light-cyber {
+
+        body.theme-light-cyber { /* Kept for reference, but not used by default */
             --primary-bg: var(--lc-primary-bg); --secondary-bg: var(--lc-secondary-bg); --tertiary-bg: var(--lc-tertiary-bg);
             --accent-primary: var(--lc-accent-primary); --accent-primary-hover: var(--lc-accent-primary-hover); --accent-primary-glow: var(--lc-accent-primary-glow);
             --accent-secondary: var(--lc-accent-secondary); --accent-secondary-hover: var(--lc-accent-secondary-hover); --accent-secondary-glow: var(--lc-accent-secondary-glow);
-            --accent-green: var(--lc-accent-green); --accent-green-hover: var(--lc-accent-green-hover); 
+            --accent-green: var(--lc-accent-green); --accent-green-hover: var(--lc-accent-green-hover);
             --accent-red: var(--lc-accent-red); --accent-red-hover: var(--lc-accent-red-hover);
             --text-primary: var(--lc-text-primary); --text-secondary: var(--lc-text-secondary); --text-interactive: var(--lc-accent-primary);
-            --border-color: var(--lc-border-color); --card-shadow: var(--lm-card-shadow); --aurora-opacity: var(--lc-aurora-opacity);
+            --border-color: var(--lc-border-color); --card-shadow: 0 10px 25px rgba(0,0,0,0.08); --aurora-opacity: var(--lc-aurora-opacity);
+            --aurora-1: var(--lc-accent-primary); --aurora-2: var(--lc-accent-secondary); --aurora-3: #00C853; --aurora-4: #D50000;
         }
-        body.theme-dark-zenith {
+        body.theme-dark-zenith { /* This will be the default dark theme */
             --primary-bg: var(--dz-primary-bg); --secondary-bg: var(--dz-secondary-bg); --tertiary-bg: var(--dz-tertiary-bg);
             --accent-primary: var(--dz-accent-primary); --accent-primary-hover: var(--dz-accent-primary-hover); --accent-primary-glow: var(--dz-accent-primary-glow);
             --accent-secondary: var(--dz-accent-secondary); --accent-secondary-hover: var(--dz-accent-secondary-hover); --accent-secondary-glow: var(--dz-accent-secondary-glow);
-            --accent-green: var(--dz-accent-green); --accent-green-hover: var(--dz-accent-green-hover); 
+            --accent-green: var(--dz-accent-green); --accent-green-hover: var(--dz-accent-green-hover);
             --accent-red: var(--dz-accent-red); --accent-red-hover: var(--dz-accent-red-hover);
             --text-primary: var(--dz-text-primary); --text-secondary: var(--dz-text-secondary); --text-interactive: var(--dz-accent-primary-hover);
-            --border-color: var(--dz-border-color); --card-shadow: var(--dm-card-shadow); --aurora-opacity: var(--dz-aurora-opacity);
+            --border-color: var(--dz-border-color); --card-shadow: 0 10px 25px rgba(0,0,0,0.2); --aurora-opacity: var(--dz-aurora-opacity);
+             --aurora-1: #4FD1C5; --aurora-2: #F6E05E; --aurora-3: #68D391; --aurora-4: #FC8181;
         }
         body.theme-light-zenith {
             --primary-bg: var(--lz-primary-bg); --secondary-bg: var(--lz-secondary-bg); --tertiary-bg: var(--lz-tertiary-bg);
             --accent-primary: var(--lz-accent-primary); --accent-primary-hover: var(--lz-accent-primary-hover); --accent-primary-glow: var(--lz-accent-primary-glow);
             --accent-secondary: var(--lz-accent-secondary); --accent-secondary-hover: var(--lz-accent-secondary-hover); --accent-secondary-glow: var(--lz-accent-secondary-glow);
-            --accent-green: var(--lz-accent-green); --accent-green-hover: var(--lz-accent-green-hover); 
+            --accent-green: var(--lz-accent-green); --accent-green-hover: var(--lz-accent-green-hover);
             --accent-red: var(--lz-accent-red); --accent-red-hover: var(--lz-accent-red-hover);
             --text-primary: var(--lz-text-primary); --text-secondary: var(--lz-text-secondary); --text-interactive: var(--lz-accent-primary);
-            --border-color: var(--lz-border-color); --card-shadow: var(--lm-card-shadow); --aurora-opacity: var(--lz-aurora-opacity);
+            --border-color: var(--lz-border-color); --card-shadow: 0 10px 25px rgba(0,0,0,0.08); --aurora-opacity: var(--lz-aurora-opacity);
+            --aurora-1: var(--lz-accent-primary); --aurora-2: var(--lz-accent-secondary); --aurora-3: #38A169; --aurora-4: #E53E3E;
         }
 
         @keyframes animatedAuroraBackground {
             0% { background-position: 0% 0%; transform: scale(1.02) rotate(0deg); }
-            25% { background-position: 100% 0%; transform: scale(1.07) rotate(0.5deg); } 
+            25% { background-position: 100% 0%; transform: scale(1.07) rotate(0.5deg); }
             50% { background-position: 100% 100%; transform: scale(1.02) rotate(0deg); }
             75% { background-position: 0% 100%; transform: scale(1.07) rotate(-0.5deg); }
             100% { background-position: 0% 0%; transform: scale(1.02) rotate(0deg); }
@@ -153,7 +155,7 @@
         @keyframes textShine {
             0% { background-position: -250% center; } 100% { background-position: 250% center; }
         }
-        @keyframes subtleFloatEnhanced { 
+        @keyframes subtleFloatEnhanced {
             0%, 100% { transform: translateY(0) rotate(-0.5deg) scale(1); }
             50% { transform: translateY(-12px) rotate(0.5deg) scale(1.03); }
         }
@@ -162,11 +164,11 @@
         }
         @keyframes pop {
             0% { transform: scale(0.3) rotate(-15deg); opacity: 0; }
-            60% { transform: scale(1.25) rotate(8deg); opacity: 1; } 
+            60% { transform: scale(1.25) rotate(8deg); opacity: 1; }
             100% { transform: scale(1) rotate(0deg); opacity: 1; }
         }
-        @keyframes tadaEnhanced { 
-            0% {transform: scale(1) rotate(0deg);} 
+        @keyframes tadaEnhanced {
+            0% {transform: scale(1) rotate(0deg);}
             10%, 20% {transform: scale(0.9) rotate(-7deg) translateY(-2px);}
             30%, 50%, 70%, 90% {transform: scale(1.2) rotate(7deg) translateY(2px);}
             40%, 60%, 80% {transform: scale(1.2) rotate(-7deg) translateY(-2px);}
@@ -177,27 +179,26 @@
             0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 12px var(--accent-primary-glow));}
             50% { transform: scale(1.2) rotate(8deg); opacity: 0.85; filter: drop-shadow(0 0 22px var(--accent-primary-glow));}
         }
-        @keyframes feedbackCelebration { 
+        @keyframes feedbackCelebration {
             0% { transform: translateY(0) scale(1); opacity: 1; }
             25% { transform: translateY(-5px) scale(1.05); color: var(--accent-green-hover); }
             50% { transform: translateY(0) scale(1); opacity: 1; }
             75% { transform: translateY(-3px) scale(1.03); }
             100% { transform: translateY(0) scale(1); opacity: 1; }
         }
-        @keyframes shake { /* For incorrect answer button */
+        @keyframes shake {
             0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); } /* More shake */
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
             20%, 40%, 60%, 80% { transform: translateX(6px); }
         }
-        @keyframes iconDrawIn { 
+        @keyframes iconDrawIn {
             from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; }
         }
-        .animate-check { /* Apply to checkmark icon */
-             stroke-dasharray: 24;
-             stroke-dashoffset: 24;
-             animation: iconDrawIn 0.5s ease-out forwards 0.2s; /* Delay start */
+        .animate-check {
+            stroke-dasharray: 24;
+            stroke-dashoffset: 24;
+            animation: iconDrawIn 0.5s ease-out forwards 0.2s;
         }
-
 
         html { scroll-behavior: smooth; }
         body {
@@ -207,18 +208,18 @@
             -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
             transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
-        body::before { 
+
+        body::before {
             content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             width: 100%; height: 100%;
-            background: 
+            background:
                 radial-gradient(ellipse at 10% 20%, var(--aurora-1), transparent 40%),
                 radial-gradient(ellipse at 90% 30%, var(--aurora-2), transparent 50%),
                 radial-gradient(ellipse at 30% 80%, var(--aurora-3), transparent 45%),
                 radial-gradient(ellipse at 70% 70%, var(--aurora-4), transparent 60%);
-            background-size: 280% 280%; 
+            background-size: 280% 280%;
             animation: animatedAuroraBackground 50s cubic-bezier(0.42, 0, 0.58, 1) infinite;
-            opacity: var(--aurora-opacity); 
+            opacity: var(--aurora-opacity);
             z-index: -1; pointer-events: none;
             transition: opacity 0.5s ease;
         }
@@ -236,77 +237,65 @@
             backdrop-filter: blur(28px) saturate(180%);
             -webkit-backdrop-filter: blur(28px) saturate(180%);
             border-right: 1px solid var(--border-color);
-            padding: 1.75rem 1.25rem; 
+            padding: 1.75rem 1.25rem;
             overflow-y: auto; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100;
             display: flex; flex-direction: column;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
-        #sidebar-header { padding: 0.5rem 0.25rem; } 
+        #sidebar-header { padding: 0.5rem 0.25rem; }
         #sidebar-header h1 {
             font-weight: 800; font-size: 1.6rem; letter-spacing: -0.035em;
-            background: linear-gradient(90deg, var(--accent-primary-hover), var(--accent-secondary)); /* Theme sensitive */
+            background: linear-gradient(90deg, var(--accent-primary-hover), var(--accent-secondary));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 0.25rem; 
+            margin-bottom: 0.25rem;
         }
         #sidebar-header p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.75rem; transition: color 0.5s ease;}
-        
-        #theme-toggle-container { 
-            position: relative; /* For the "Welcome" text */
-            margin: 0 auto 1.75rem auto; 
-            display: flex; flex-direction: column; align-items: center;
-        }
-        #theme-toggle-button {
-            background: transparent; /* Let icon be the button */
-            color: var(--text-secondary); /* Icon color */
-            border: none; /* No border for icon button */
-            padding: 0.5rem; /* Adjust padding for touch target */
-            border-radius: 50%;
-            cursor: pointer; display: flex; align-items: center; justify-content: center;
-            width: 48px; height: 48px; 
-            position: relative; overflow: hidden; 
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
-        }
-        #theme-toggle-button:hover {
-             transform: scale(1.15) rotate(25deg); /* More playful hover */
-             color: var(--text-primary);
-        }
-        #theme-toggle-button:active { transform: scale(0.95) rotate(0deg); }
-        #theme-toggle-button .lucide { 
-            width: 26px; height: 26px; /* Larger icons */
-            position: absolute; 
-            transition: transform 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.65), opacity 0.6s ease-in-out; /* Slower, more dramatic */
-        }
-        /* Initial states for animation */
-        #theme-icon-sun { transform: rotate(-180deg) scale(0); opacity: 0; } /* Sun starts hidden and rotated */
-        #theme-icon-moon { transform: rotate(0deg) scale(1); opacity: 1; } /* Moon visible in dark mode */
 
-        /* Light mode: Sun visible, Moon hidden */
-        body[class*="light"] #theme-icon-sun { transform: rotate(0deg) scale(1); opacity: 1; }
-        body[class*="light"] #theme-icon-moon { transform: rotate(180deg) scale(0); opacity: 0; }
-
-
-        #theme-welcome-text {
-            position: absolute;
-            top: calc(100% + 10px); /* Position below the button */
-            font-size: 0.8rem;
-            color: var(--text-secondary);
+        /* --- NEW THEME TOGGLE STYLES --- */
+        #theme-cycler-container {
+            margin-bottom: 1.75rem;
+            padding: 0 0.25rem;
+        }
+        #theme-cycle-button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
             background-color: var(--tertiary-bg);
-            padding: 0.3rem 0.6rem;
-            border-radius: 0.3rem;
-            opacity: 0;
-            transform: translateY(-15px) scale(0.8); /* Start smaller and further up */
-            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, color 0.5s ease, background-color 0.5s ease; 
-            pointer-events: none;
-            white-space: nowrap;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+            color: var(--text-primary);
         }
-        #theme-welcome-text.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+        #theme-cycle-button:hover {
+            border-color: var(--accent-primary);
+            background-color: color-mix(in srgb, var(--tertiary-bg) 80%, var(--accent-primary) 20%);
+            color: var(--accent-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--accent-primary-glow);
         }
+        #theme-cycle-button:focus {
+            outline: none;
+            border-color: var(--accent-primary-hover);
+            box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-primary) 30%, transparent);
+        }
+        #theme-cycle-button .lucide {
+            margin-right: 0.5rem;
+            width: 18px; height: 18px;
+            stroke-width: 2.5;
+            color: var(--text-interactive);
+            transition: color 0.2s ease;
+        }
+         #theme-cycle-button:hover .lucide {
+            color: var(--accent-primary-hover);
+        }
+        /* --- END OF NEW THEME TOGGLE STYLES --- */
 
-
-        #module-navigation-list { flex-grow: 1; } 
+        #module-navigation-list { flex-grow: 1; }
 
         .sidebar-module-link {
             display: flex; align-items: center; padding: 0.85rem 1.1rem; border-radius: 0.75rem;
@@ -315,68 +304,77 @@
         }
         .sidebar-module-link .lucide { margin-right: 0.85rem; width: 20px; height: 20px; stroke-width: 2; transition: color 0.3s ease, transform 0.3s ease; }
         .sidebar-module-link:hover { background-color: var(--tertiary-bg); color: var(--text-primary); border-color: var(--border-color); transform: translateX(5px); }
-        .sidebar-module-link:hover .lucide { transform: scale(1.1) rotate(-3deg); } /* Subtle icon animation */
+        .sidebar-module-link:hover .lucide { transform: scale(1.1) rotate(-3deg); }
         .sidebar-module-link.active {
             background: linear-gradient(95deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            color: white !important; font-weight: 600; 
+            color: white !important; font-weight: 600;
             box-shadow: 0 6px 20px var(--accent-primary-glow), 0 3px 10px var(--accent-secondary-glow);
             transform: translateX(5px) scale(1.02);
         }
         .sidebar-module-link.active .lucide { color: white !important; transform: scale(1.1); }
-        
-        .sidebar-module-link .module-progress { 
+
+        .sidebar-module-link .module-progress {
             margin-left: auto; display: flex; align-items: center;
-            font-size: 0.75rem; 
+            font-size: 0.75rem;
             background-color: color-mix(in srgb, var(--tertiary-bg) 70%, transparent);
-            padding: 2px; 
+            padding: 2px;
             border-radius: 0.3rem;
-            width: 60px; /* Fixed width for progress bar container */
+            width: 60px;
             height: 18px;
-            position: relative; 
+            position: relative;
         }
-         .sidebar-module-link .module-progress-bar-inner { 
-            height: 100%; background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover)); 
-            border-radius: 0.2rem; 
-            width: 0%; 
-            transition: width 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth charge-up */
+        .sidebar-module-link .module-progress-bar-inner {
+            height: 100%; background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover));
+            border-radius: 0.2rem;
+            width: 0%;
+            transition: width 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
             box-shadow: 0 0 5px color-mix(in srgb, var(--accent-green) 50%, transparent);
         }
+
         .sidebar-module-link .module-progress-text {
-            position: absolute; 
+            position: absolute;
             left: 50%; top: 50%;
             transform: translate(-50%, -50%);
-            font-size: 0.65rem; 
-            color: var(--text-primary); 
+            font-size: 0.65rem;
             font-weight: 600;
             line-height: 1;
-            mix-blend-mode: exclusion; /* Try exclusion for better contrast on varied backgrounds */
+            color: var(--text-primary);
+            mix-blend-mode: exclusion;
+            transition: color 0.3s ease;
         }
-        body.theme-light-cyber .sidebar-module-link .module-progress-text,
-        body.theme-light-zenith .sidebar-module-link .module-progress-text {
-            color: var(--text-primary); /* Darker text in light modes */
-            mix-blend-mode: normal; 
+        .sidebar-module-link .module-progress-text.progress-empty {
+            color: var(--text-secondary);
+            mix-blend-mode: normal;
+        }
+        body[class*="light-"] .sidebar-module-link .module-progress-text {
+            color: var(--text-primary);
+            mix-blend-mode: normal;
+        }
+        body[class*="light-"] .sidebar-module-link .module-progress-text.progress-empty {
+            color: var(--text-secondary);
+            mix-blend-mode: normal;
         }
 
         .sidebar-module-link.active .module-progress { background-color: rgba(255,255,255,0.15); }
         .sidebar-module-link.active .module-progress-text { color: white; mix-blend-mode: normal; }
+        .sidebar-module-link.active .module-progress-text.progress-empty { color: white; mix-blend-mode: normal; }
 
-        .sidebar-module-link.module-complete-visual .module-progress-bar-inner { 
-             background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover));
+
+        .sidebar-module-link.module-complete-visual .module-progress-bar-inner {
+            background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover));
         }
         .sidebar-module-link.module-complete-visual .module-progress-text {
-             color: color-mix(in srgb, var(--primary-bg) 90%, black);
+            color: color-mix(in srgb, var(--primary-bg) 90%, black);
         }
-         body.theme-light-cyber .sidebar-module-link.module-complete-visual .module-progress-text,
-         body.theme-light-zenith .sidebar-module-link.module-complete-visual .module-progress-text {
-             color: white;
+        body[class*="light-"] .sidebar-module-link.module-complete-visual .module-progress-text {
+            color: white;
         }
-         .sidebar-module-link.module-complete-visual:not(.active) .lucide { color: var(--accent-green); animation: pulseIcon 1.5s infinite; }
-
+        .sidebar-module-link.module-complete-visual:not(.active) .lucide { color: var(--accent-green); animation: pulseIcon 1.5s infinite; }
 
         #scroll-container { flex-grow: 1; overflow-y: auto; height: 100vh; padding-left: 290px; }
 
-        .section-padding { padding: 7rem 5rem; } 
-        @media (max-width: 1024px) { 
+        .section-padding { padding: 7rem 5rem; }
+        @media (max-width: 1024px) {
             .section-padding { padding: 5rem 2rem; }
             #sticky-sidebar-nav { width: 100%; height: auto; position: relative; z-index: 101; border-right: none; border-bottom: 1px solid var(--border-color); }
             #scroll-container { padding-left: 0; }
@@ -384,13 +382,13 @@
         }
         @media (max-width: 640px) { .section-padding { padding: 4rem 1rem; } }
 
-
         #hero-section {
             min-height: 95vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center; position: relative;
         }
         #hero-section h2 {
-            font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 900; letter-spacing: -0.055em; line-height: 1.0;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900; letter-spacing: -0.05em; line-height: 1.05;
             margin-bottom: 2rem;
             background: linear-gradient(125deg, var(--accent-primary-hover) 10%, var(--accent-secondary-hover) 50%, #FFD700 85%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
@@ -398,13 +396,14 @@
             background-size: 300% auto;
         }
         #hero-section .hero-subtitle {
-            font-size: clamp(1.15rem, 4vw, 1.75rem); color: var(--text-secondary); max-width: 800px;
+            font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+            color: var(--text-secondary); max-width: 750px;
             margin-bottom: 3.5rem; line-height: 1.7;
             animation: fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s backwards;
         }
         #hero-section .scroll-down-indicator {
             position: absolute; bottom: 3rem;
-            animation: subtleFloatEnhanced 2.8s ease-in-out infinite 1s, fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.8s backwards; /* Enhanced float */
+            animation: subtleFloatEnhanced 2.8s ease-in-out infinite 1s, fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.8s backwards;
         }
         #hero-section .scroll-down-indicator .lucide { width: 36px; height: 36px; color: var(--accent-primary); opacity: 0.8; }
 
@@ -426,6 +425,11 @@
         .module-header.is-visible .module-title-main {
             animation: revealText 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
+        @keyframes revealText {
+            from { opacity: 0; transform: translateY(100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
 
         .module-description {
             font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;
@@ -436,16 +440,16 @@
         .lesson-block {
             background-color: color-mix(in srgb, var(--secondary-bg) 60%, transparent);
             border: 1px solid var(--border-color);
-            border-radius: 1.5rem; 
-            padding: 3rem 3.5rem; 
-            margin-bottom: 4rem; 
+            border-radius: 1.5rem;
+            padding: 3rem 3.5rem;
+            margin-bottom: 4rem;
             box-shadow: 0 20px 50px var(--card-shadow);
             opacity: 0; transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s ease, border-color 0.5s ease;
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
         }
         .lesson-block.is-visible { opacity: 1; transform: translateY(0); }
 
-        .lesson-block #lesson-title { 
+        .lesson-block #lesson-title {
             font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700;
             letter-spacing: -0.03em; color: var(--text-interactive);
             margin-bottom: 2rem;
@@ -454,7 +458,7 @@
         .lesson-block #lesson-instruction { color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; transition: color 0.5s ease; }
         .lesson-block #lesson-instruction strong { color: var(--text-primary); font-weight: 600; transition: color 0.5s ease; }
         .lesson-block #lesson-instruction code {
-            background-color: var(--tertiary-bg); color: var(--accent-primary); /* Use primary accent for code */
+            background-color: var(--tertiary-bg); color: var(--accent-primary);
             padding: 0.3rem 0.6rem; border-radius: 0.5rem;
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
             border: 1px solid var(--border-color);
@@ -468,58 +472,62 @@
             padding: 1.75rem; border-radius: 1rem; margin-top: 2rem;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
-        .lesson-block #lesson-example h4 { color: var(--text-primary); font-weight: 600; font-size: 1.05rem; transition: color 0.5s ease; }
+        .lesson-block #lesson-example h5 { color: var(--text-primary); font-weight: 600; font-size: 1.05rem; transition: color 0.5s ease; }
         .lesson-block #lesson-example p { font-size: 0.95rem; color: var(--text-secondary); transition: color 0.5s ease; }
 
         .lesson-block #quiz-area { border-top: 1px solid var(--border-color); margin-top: 3rem; padding-top: 3rem; transition: border-color 0.5s ease;}
         .lesson-block #quiz-question-title { color: var(--text-primary); font-weight: 700; font-size: 1.3rem; transition: color 0.5s ease;}
         .lesson-block #quiz-question { color: var(--text-primary); font-size: 1.15rem; font-weight: 500; margin-bottom: 1.75rem; transition: color 0.5s ease;}
-        
+
         .lesson-block .lesson-option {
             background-color: var(--tertiary-bg); border: 2px solid var(--border-color); color: var(--text-primary);
-            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
             border-radius: 0.85rem; padding: 1.1rem 1.35rem; font-weight: 500;
-            position:relative;
+            position:relative; cursor: pointer;
         }
         .lesson-block .lesson-option:hover:not(:disabled) {
             background-color: var(--border-color); border-color: var(--accent-primary);
             transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
         .lesson-block .lesson-option:active:not(:disabled) {
-             transform: translateY(-2px) scale(0.98);
+            transform: translateY(-2px) scale(0.98);
         }
-        .lesson-block .lesson-option.correct { 
+        @keyframes feedbackPop {
+            0% { transform: scale(0.8); opacity: 0.7; }
+            70% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .lesson-block .lesson-option.correct {
             background: linear-gradient(135deg, var(--accent-green), var(--accent-green-hover)) !important;
-            border-color: var(--accent-green-hover) !important; 
-            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important; /* Ensure contrast */
+            border-color: var(--accent-green-hover) !important;
+            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important;
             font-weight: 600;
-            transform: scale(1.03); 
-            animation: feedbackPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); 
+            transform: scale(1.03);
+            animation: feedbackPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        body[class*="light"] .lesson-block .lesson-option.correct { 
-            color: white !important; 
+        body[class*="light-"] .lesson-block .lesson-option.correct {
+            color: white !important;
         }
 
-        .lesson-block .lesson-option.incorrect { 
+        .lesson-block .lesson-option.incorrect {
             background: linear-gradient(135deg, var(--accent-red), var(--accent-red-hover)) !important;
-            border-color: var(--accent-red-hover) !important; 
-            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important; /* Ensure contrast */
+            border-color: var(--accent-red-hover) !important;
+            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important;
             font-weight: 600;
             animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
         }
-         body[class*="light"] .lesson-block .lesson-option.incorrect { 
-            color: white !important; 
+        body[class*="light-"] .lesson-block .lesson-option.incorrect {
+            color: white !important;
         }
-        
-        .lesson-block #feedback-area p { font-weight: 500; padding: 0.85rem 1.1rem; border-radius: 0.6rem; animation: feedbackPop 0.4s ease-out; }
-        .lesson-block #feedback-area .feedback-correct { 
-            background-color: color-mix(in srgb, var(--accent-green) 20%, transparent); 
-            color: var(--accent-green-hover); border: 1px solid var(--accent-green);
-            animation: feedbackCelebration 0.6s ease-out; 
-        }
-        .lesson-block #feedback-area .feedback-incorrect { background-color: color-mix(in srgb, var(--accent-red) 20%, transparent); color: var(--accent-red-hover); border: 1px solid var(--accent-red); }
 
-        /* Visual Aid Placeholder */
+        .lesson-block .feedback-area-lesson p { font-weight: 500; padding: 0.85rem 1.1rem; border-radius: 0.6rem; animation: feedbackPop 0.4s ease-out; }
+        .lesson-block .feedback-area-lesson .feedback-correct {
+            background-color: color-mix(in srgb, var(--accent-green) 20%, transparent);
+            color: var(--accent-green-hover); border: 1px solid var(--accent-green);
+            animation: feedbackCelebration 0.6s ease-out;
+        }
+        .lesson-block .feedback-area-lesson .feedback-incorrect { background-color: color-mix(in srgb, var(--accent-red) 20%, transparent); color: var(--accent-red-hover); border: 1px solid var(--accent-red); }
+
         .visual-aid-placeholder {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
             min-height: 280px;
@@ -536,13 +544,14 @@
         .visual-aid-placeholder:hover .lucide { transform: scale(1.1) rotate(5deg); }
         .visual-aid-placeholder p { color: var(--text-secondary); font-style: italic; transition: color 0.5s ease;}
 
-        #restart-course-button { 
+        #restart-course-button {
             background: linear-gradient(95deg, var(--accent-primary), var(--accent-secondary));
             color: white; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 0.75rem;
             box-shadow: 0 5px 20px var(--accent-primary-glow), 0 2px 10px var(--accent-secondary-glow), inset 0 1px 1px rgba(255,255,255,0.1);
             transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); border: none;
+            cursor: pointer;
         }
-         #restart-course-button:hover {
+        #restart-course-button:hover {
             transform: translateY(-4px) scale(1.04);
             box-shadow: 0 8px 28px var(--accent-primary-glow), 0 5px 15px var(--accent-secondary-glow), inset 0 1px 1px rgba(255,255,255,0.1);
         }
@@ -550,17 +559,16 @@
             transform: translateY(-1px) scale(1.01);
         }
 
-
         #completion-section {
             min-height: 80vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
         }
         #completion-section h2 { font-size: 3.25rem; font-weight: 800; color: var(--accent-green-hover); transition: color 0.5s ease; letter-spacing: -0.02em; }
         #completion-section p { font-size: 1.3rem; color: var(--text-secondary); margin-top: 0.75rem; transition: color 0.5s ease; }
-        #completion-section .lucide-party-popper { width: 88px; height: 88px; color: var(--accent-primary); margin-bottom: 1.25rem; animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, tadaEnhanced 1.8s 0.6s ease-in-out infinite; transition: color 0.5s ease;} /* Enhanced tada */
+        #completion-section .lucide-party-popper { width: 88px; height: 88px; color: var(--accent-primary); margin-bottom: 1.25rem; animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, tadaEnhanced 1.8s 0.6s ease-in-out infinite; transition: color 0.5s ease;}
 
         .animate-on-scroll { opacity: 0; transition: opacity 0.9s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.9s cubic-bezier(0.165, 0.84, 0.44, 1); }
-        .animate-on-scroll.slide-up { transform: translateY(60px); } /* More pronounced slide */
+        .animate-on-scroll.slide-up { transform: translateY(60px); }
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0) translateX(0); }
 
     </style>
@@ -572,12 +580,11 @@
                 <h1>Gemini Skills</h1>
                 <p>Workspace Booster</p>
             </div>
-            <div id="theme-toggle-container">
-                <button id="theme-toggle-button" aria-label="Toggle theme">
-                    <i data-lucide="sun" id="theme-icon-sun"></i>
-                    <i data-lucide="moon" id="theme-icon-moon"></i>
+            <div id="theme-cycler-container">
+                <button id="theme-cycle-button">
+                    <i data-lucide="palette"></i>
+                    <span id="current-theme-name-display">Theme</span>
                 </button>
-                <span id="theme-welcome-text"></span>
             </div>
             <ul id="module-navigation-list">
                 <!-- Module links will be injected here by JS -->
@@ -596,10 +603,10 @@
             <!-- Module and Lesson content will be injected here by JS -->
 
             <section id="completion-section" class="section-padding hidden">
-                 <i data-lucide="party-popper"></i>
+                <i data-lucide="party-popper"></i>
                 <h2>Course Completed!</h2>
                 <p>Congratulations! You've mastered the Gemini Workspace Skills Booster.</p>
-                <button id="restart-course-button" class="mt-8 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-150 ease-in-out text-base">
+                <button id="restart-course-button" class="mt-8 text-base">
                     Restart Course
                 </button>
             </section>
@@ -616,20 +623,20 @@ function replaceLucideIcons() {
             console.warn("Lucide library not loaded yet for icon replacement.");
             setTimeout(() => {
                 if (typeof lucide !== 'undefined') { lucide.createIcons(); }
-                 else { console.error("Lucide library failed to load for icon replacement."); }
+                else { console.error("Lucide library failed to load for icon replacement."); }
             }, 600);
         }
-    }, 100); 
+    }, 100);
 }
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const courseData = [ // Ensure this uses your full dataset
+    const courseData = [
         {
             moduleId: "gemini-fundamentals",
-            moduleTitle: "Gemini: The Foundation", 
+            moduleTitle: "Gemini: The Foundation",
             moduleDescription: "Grasp the core concepts of Gemini and its transformative power in your daily Google Workspace tasks.",
-            moduleIcon: "atom", 
+            moduleIcon: "atom",
             lessons: [
                 {
                     lessonId: "fundamentals-1",
@@ -665,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     completed: false
                 },
-                 {
+                {
                     lessonId: "fundamentals-3",
                     title: "Responsible AI: Trust & Privacy",
                     instruction: `<p>Leveraging AI in an enterprise environment demands an unwavering commitment to responsibility, data security, and ethical use. Google has engineered Gemini for Workspace with these foundational principles:</p><ul><li><strong>Your Data Remains Yours:</strong> Crucially, your company's proprietary data (emails, documents, spreadsheets, etc.) is <strong>not</strong> used to train Google's general foundation models that serve other customers or the public. You maintain full ownership and control.</li><li><strong>You Are in Command:</strong> Gemini acts as an assistant, providing intelligent suggestions and drafts. However, <strong>you</strong> always retain ultimate control. Every piece of AI-generated content requires your review, critical editing, and explicit approval before use or distribution.</li><li><strong>The Imperative of Fact-Checking:</strong> Generative AI, while powerful, can occasionally produce inaccuracies or incomplete information (often termed 'hallucinations'). It is vital to critically evaluate all of Gemini's outputs, especially those involving factual claims or data-sensitive operations. Always cross-verify information with trusted, reliable sources.</li><li><strong>Cultivating Bias Awareness:</strong> AI models learn from vast datasets, which may inadvertently reflect existing societal biases. Be vigilant and mindful of potential biases in generated content. Strive for fairness, equity, and inclusivity in all your final work produced with AI assistance.</li></ul><p>Furthermore, ensure you are well-versed in your organization's specific policies and guidelines regarding the use of artificial intelligence tools.</p>`,
@@ -689,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moduleId: "gemini-gmail",
             moduleTitle: "Gmail: AI-Powered Email",
             moduleDescription: "Revolutionize your inbox. Learn to draft, summarize, and manage emails with unparalleled AI efficiency in Gmail.",
-            moduleIcon: "mail-check", 
+            moduleIcon: "mail-check",
             lessons: [
                 {
                     lessonId: "gmail-1",
@@ -709,7 +716,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     completed: false
                 },
-                 {
+                {
                     lessonId: "gmail-2",
                     title: "Conquer Email Overload: Thread Summaries",
                     instruction: `<p>Effortlessly navigate long and complex email threads with Gemini's intelligent summarization feature in Gmail. This capability is invaluable for quickly grasping context, key decisions, and outstanding action items without needing to read every single message.</p><p><strong>How Thread Summarization Works:</strong></p><ul><li>For lengthy or eligible email threads, a 'Summarize' button (often accompanied by the ✨ icon) will typically appear at the top of the conversation.</li><li>Clicking this button prompts Gemini to analyze the thread and generate a concise summary of its most critical points.</li><li>The summary usually highlights the main topics discussed, significant decisions made, any unresolved questions, and assigned action items.</li></ul><p>This feature is particularly beneficial when: onboarding to an ongoing project, catching up after a period of absence, or needing a rapid understanding of a thread's essentials before a meeting or making a decision.</p>`,
@@ -733,7 +740,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moduleId: "gemini-slides",
             moduleTitle: "Slides: AI-Enhanced Presentations",
             moduleDescription: "Design compelling presentations with AI assistance for outlines, content, and unique visuals in Google Slides.",
-            moduleIcon: "presentation", 
+            moduleIcon: "presentation",
             lessons: [
                 {
                     lessonId: "slides-1",
@@ -761,92 +768,75 @@ document.addEventListener('DOMContentLoaded', () => {
     const moduleNavList = document.getElementById('module-navigation-list');
     const completionSection = document.getElementById('completion-section');
     const restartCourseButton = document.getElementById('restart-course-button');
-    const themeToggleButton = document.getElementById('theme-toggle-button');
-    const themeIconSun = document.getElementById('theme-icon-sun');
-    const themeIconMoon = document.getElementById('theme-icon-moon');
-    const themeWelcomeText = document.getElementById('theme-welcome-text');
+    const themeCycleButton = document.getElementById('theme-cycle-button');
+    const currentThemeNameDisplay = document.getElementById('current-theme-name-display');
 
-    const themes = ['dark-cyber', 'light-cyber', 'dark-zenith', 'light-zenith'];
-    let currentThemeIndex = 0; 
+    const themes = ['dark-zenith', 'light-zenith'];
+    const themeFriendlyNames = { // Updated for simpler text
+        'dark-zenith': "Dark Mode",
+        'light-zenith': "Light Mode"
+    };
+    let currentThemeIndex = 0; // Default to Dark Zenith
+
 
     // --- Theme Toggle ---
     function applyTheme(themeName, isInitialLoad = false) {
-        document.body.className = ''; 
-        document.body.classList.add(themeName); 
+        document.body.className = '';
+        document.body.classList.add(`theme-${themeName}`); // Ensure 'theme-' prefix is added
 
-        const isLight = themeName.includes('light');
-        
-        if(themeIconSun) {
-            themeIconSun.style.transform = isLight ? 'rotate(0deg) scale(1) translateY(0%)' : 'rotate(-180deg) scale(0) translateY(50%)';
-            themeIconSun.style.opacity = isLight ? '1' : '0';
-        }
-        if(themeIconMoon) {
-            themeIconMoon.style.transform = isLight ? 'rotate(180deg) scale(0) translateY(-50%)' : 'rotate(0deg) scale(1) translateY(0%)';
-            themeIconMoon.style.opacity = isLight ? '0' : '1';
-        }
-        
-        if(themeWelcomeText && !isInitialLoad){ // Only show welcome text on manual toggle
-            let welcomeMsg = "";
-            if (themeName.includes('dark')) {
-                welcomeMsg = themeName.includes('cyber') ? "Embrace the Matrix!" : "Welcome to the Shadows.";
-            } else {
-                welcomeMsg = themeName.includes('cyber') ? "Bright Future!" : "Serenity Now.";
-            }
-            themeWelcomeText.textContent = welcomeMsg;
-            themeWelcomeText.classList.add('visible');
-            setTimeout(() => {
-                if(themeWelcomeText) themeWelcomeText.classList.remove('visible');
-            } , 2500); 
+        if (currentThemeNameDisplay) {
+            currentThemeNameDisplay.textContent = themeFriendlyNames[themeName] || "Unknown Theme";
         }
 
         try {
             localStorage.setItem('geminiSkillsThemeIndex', currentThemeIndex.toString());
         } catch (e) { console.warn("Could not save theme preference."); }
-        replaceLucideIcons(); 
+        replaceLucideIcons();
     }
 
-    if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', () => {
+    if (themeCycleButton) {
+        themeCycleButton.addEventListener('click', () => {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
-            applyTheme(`theme-${themes[currentThemeIndex]}`);
+            applyTheme(themes[currentThemeIndex]);
         });
     }
-    
+
     function loadSavedTheme() {
-        let savedThemeIdx = 0; 
+        let savedThemeIdx = 0;
         try {
             const storedThemeIdx = localStorage.getItem('geminiSkillsThemeIndex');
             if (storedThemeIdx !== null) {
-                 savedThemeIdx = parseInt(storedThemeIdx, 10);
-                 if (isNaN(savedThemeIdx) || savedThemeIdx < 0 || savedThemeIdx >= themes.length) {
-                    savedThemeIdx = 0; 
-                 }
+                savedThemeIdx = parseInt(storedThemeIdx, 10);
+                if (isNaN(savedThemeIdx) || savedThemeIdx < 0 || savedThemeIdx >= themes.length) {
+                    savedThemeIdx = 0;
+                }
             }
         } catch (e) { console.warn("Could not load theme preference."); }
         currentThemeIndex = savedThemeIdx;
-        applyTheme(`theme-${themes[currentThemeIndex]}`, true); // Pass true for initial load
+        applyTheme(themes[currentThemeIndex], true);
     }
-
 
     // --- Animation Observer ---
     const animationObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-            } else {
-                 // entry.target.classList.remove('is-visible'); 
             }
         });
-    }, { threshold: 0.15 }); 
+    }, { threshold: 0.15 });
 
     function observeElements(selector) {
         document.querySelectorAll(selector).forEach(el => {
             animationObserver.observe(el);
         });
     }
-    
+
     // --- UI RENDERING ---
     function renderCourse() {
+        if (!moduleNavList || !scrollContainer || !completionSection) {
+            console.error("Core UI elements for rendering course are missing.");
+            return;
+        }
         moduleNavList.innerHTML = '';
         Array.from(scrollContainer.querySelectorAll('.module-section')).forEach(el => el.remove());
 
@@ -855,7 +845,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const link = document.createElement('a');
             link.href = `#module-${module.moduleId}`;
             link.className = 'sidebar-module-link';
-            // Updated progress bar structure in link.innerHTML
             link.innerHTML = `
                 <i data-lucide="${module.moduleIcon || 'book-open'}"></i>
                 <span>${module.moduleTitle}</span>
@@ -870,15 +859,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
-                updateActiveModuleNav(module.moduleId);
+                updateActiveModuleNav(`module-${module.moduleId}`);
             });
             li.appendChild(link);
             moduleNavList.appendChild(li);
 
             const moduleSection = document.createElement('section');
             moduleSection.id = `module-${module.moduleId}`;
-            moduleSection.className = 'module-section section-padding'; 
-            
+            moduleSection.className = 'module-section section-padding';
+
             let moduleHTML = `
                 <div class="module-header animate-on-scroll slide-up">
                     <div class="module-title-main-wrapper">
@@ -893,7 +882,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 moduleHTML += `
                     <div class="lesson-block" data-module-index="${moduleIdx}" data-lesson-index="${lessonIdx}">
                         <h4 id="lesson-title">${lesson.title}</h4>
-                        
+
                         ${lesson.imagePrompt ? `
                         <div id="visual-aid-section" class="mb-6">
                             <div class="visual-aid-container-lesson visual-aid-placeholder my-4">
@@ -902,7 +891,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </div>
                         </div>` : ''}
 
-                        <div id="lesson-instruction" class="max-w-none mb-6">${lesson.instruction}</div>
+                        <div id="lesson-instruction" class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none mb-6">${lesson.instruction}</div>
                         ${lesson.example ? `
                         <div id="lesson-example" class="p-4 rounded-lg mb-6">
                             <h5 class="font-semibold text-sm mb-2 flex items-center"><i data-lucide="lightbulb" class="mr-2 h-4 w-4 text-yellow-400"></i>Example:</h5>
@@ -916,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 ${lesson.quiz.options.map(opt => `<button class="lesson-option">${opt}</button>`).join('')}
                             </div>
                             <div class="feedback-area-lesson mt-4">
-                                <p class="feedback-message-lesson text-xs p-2 rounded-md"></p>
+                                <p class="feedback-message-lesson text-xs p-2 rounded-md" style="display:none;"></p>
                             </div>
                         </div>` : `<div class="my-4 p-3 bg-[var(--tertiary-bg)] rounded-md text-sm text-[var(--text-secondary)] transition-colors duration-500"><i data-lucide="info" class="inline w-4 h-4 mr-2"></i>This lesson is informational. No quiz.</div>`}
                         <div class="next-lesson-button-container mt-6 text-right" data-is-last-overall="${isLastLessonOverall}"></div>
@@ -932,7 +921,7 @@ document.addEventListener('DOMContentLoaded', () => {
         replaceLucideIcons();
         observeElements('.animate-on-scroll, .lesson-block, .module-header');
     }
-    
+
     function updateActiveModuleNav(visibleModuleId) {
         document.querySelectorAll('.sidebar-module-link').forEach(link => {
             if (link.getAttribute('href') === `#${visibleModuleId}`) {
@@ -949,7 +938,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateActiveModuleNav(entry.target.id);
             }
         });
-    }, { root: scrollContainer, threshold: 0.4, rootMargin: "-40% 0px -40% 0px" }); 
+    }, { root: scrollContainer, threshold: 0.4, rootMargin: "-40% 0px -40% 0px" });
 
     function observeModuleSections() {
         document.querySelectorAll('.module-section').forEach(section => {
@@ -967,31 +956,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 const quizOptionsContainer = lessonBlock.querySelector('.quiz-options-lesson');
                 const optionButtons = quizOptionsContainer.querySelectorAll('.lesson-option');
                 const feedbackMessageEl = lessonBlock.querySelector('.feedback-message-lesson');
-                const nextButtonContainer = lessonBlock.querySelector('.next-lesson-button-container'); 
+                const nextButtonContainer = lessonBlock.querySelector('.next-lesson-button-container');
 
                 optionButtons.forEach(button => {
                     button.onclick = () => {
                         handleQuizOptionSelect(button, button.textContent, lesson, optionButtons, feedbackMessageEl, nextButtonContainer, moduleIndex, lessonIndex);
                     };
                 });
-                if(lesson.completed){ 
+                if(lesson.completed){
                     feedbackMessageEl.innerHTML = '<strong>Lesson Completed!</strong> You can review or scroll on.';
                     feedbackMessageEl.className = 'feedback-message-lesson text-xs p-2 rounded-md feedback-correct';
+                    feedbackMessageEl.style.display = 'block';
                     optionButtons.forEach(btn => {
-                         btn.disabled = true;
-                         if (btn.textContent === lesson.quiz.correctAnswer) btn.classList.add('correct');
+                        btn.disabled = true;
+                        if (btn.textContent === lesson.quiz.correctAnswer) btn.classList.add('correct');
                     });
                     showNextOrComplete(nextButtonContainer, moduleIndex, lessonIndex, true);
+                } else {
+                     feedbackMessageEl.style.display = 'none';
                 }
             } else {
                 const nextButtonContainer = lessonBlock.querySelector('.next-lesson-button-container');
-                showNextOrComplete(nextButtonContainer, moduleIndex, lessonIndex, true); 
+                if (!lesson.completed) {
+                    lesson.completed = true;
+                    updateModuleProgressDisplay(courseData[moduleIndex].moduleId);
+                    checkOverallCompletion();
+                }
+                showNextOrComplete(nextButtonContainer, moduleIndex, lessonIndex, true);
             }
         });
     }
 
     function handleQuizOptionSelect(selectedButtonEl, selectedAnswer, lesson, allOptionButtons, feedbackEl, nextBtnContainer, moduleIdx, lessonIdx) {
         allOptionButtons.forEach(btn => btn.disabled = true);
+        feedbackEl.style.display = 'block';
 
         if (selectedAnswer === lesson.quiz.correctAnswer) {
             feedbackEl.innerHTML = '<strong>Correct!</strong> Splendid work.';
@@ -1011,60 +1009,70 @@ document.addEventListener('DOMContentLoaded', () => {
         showNextOrComplete(nextBtnContainer, moduleIdx, lessonIdx, lesson.completed);
         updateModuleProgressDisplay(courseData[moduleIdx].moduleId);
         if(lesson.completed) {
-            checkOverallCompletion(); 
+            checkOverallCompletion();
         }
     }
-    
-    function showNextOrComplete(container, currentModuleIdx, currentLessonIdx, isCompleted) {
+
+    function showNextOrComplete(container, currentModuleIdx, currentLessonIdx, isLessonConsideredComplete) {
         if (!container) return;
-        container.innerHTML = ''; 
-        const isLastLessonInModule = currentLessonIdx === courseData[currentModuleIdx].lessons.length - 1;
-        const isLastOverall = container.dataset.isLastOverall === "true";
+        container.innerHTML = '';
+        const isLastLessonOverall = container.dataset.isLastOverall === "true";
 
         const p = document.createElement('p');
         p.className = 'font-semibold mt-4 text-sm';
 
-        if (isCompleted) {
-            p.classList.add('text-[var(--accent-green-hover)]'); 
+        if (isLessonConsideredComplete) {
+            p.classList.add('text-[var(--accent-green-hover)]');
             p.innerHTML = 'Lesson Complete! <i data-lucide="check-circle" class="inline w-4 h-4 animate-check"></i> ';
-            
-            if (isLastOverall) {
-                 p.innerHTML += ' This is the final lesson!';
-            } else if (isLastLessonInModule) {
-                p.innerHTML += 'Module Finished! Scroll to the next one.';
+
+            if (isLastLessonOverall) {
+                p.innerHTML += ' This is the final lesson!';
             } else {
-                 p.innerHTML += 'Scroll down for the next lesson.';
+                 const currentModule = courseData[currentModuleIdx];
+                 if (currentLessonIdx === currentModule.lessons.length - 1) {
+                    p.innerHTML += 'Module Finished! Scroll to the next one or use the sidebar.';
+                 } else {
+                    p.innerHTML += 'Scroll down for the next lesson.';
+                 }
             }
         }
-        
-        if (p.innerHTML.trim() !== '') { 
-             container.appendChild(p);
-             replaceLucideIcons();
+
+        if (p.innerHTML.trim() !== '' && isLessonConsideredComplete) {
+            container.appendChild(p);
+            replaceLucideIcons();
         }
     }
+
 
     function updateModuleProgressDisplay(moduleId) {
         const moduleData = courseData.find(m => m.moduleId === moduleId);
         if (!moduleData) return;
 
-        const doneLessons = moduleData.lessons.filter(l => l.completed || !l.quiz).length;
+        const doneLessons = moduleData.lessons.filter(l => l.completed).length;
         const totalLessons = moduleData.lessons.length;
         const progress = totalLessons > 0 ? Math.round((doneLessons / totalLessons) * 100) : 0;
-        
+
         const progressTextEl = document.getElementById(`progress-text-${moduleId}`);
         const progressBarEl = document.getElementById(`progress-bar-${moduleId}`);
 
-        if (progressTextEl) progressTextEl.textContent = `${progress}%`;
+        if (progressTextEl) {
+            progressTextEl.textContent = `${progress}%`;
+            if (progress === 0) {
+                progressTextEl.classList.add('progress-empty');
+            } else {
+                progressTextEl.classList.remove('progress-empty');
+            }
+        }
         if (progressBarEl) {
-            requestAnimationFrame(() => { 
-                 progressBarEl.style.width = `${progress}%`;
+            requestAnimationFrame(() => {
+                progressBarEl.style.width = `${progress}%`;
             });
         }
-        
+
         const linkEl = document.querySelector(`.sidebar-module-link[href="#module-${moduleId}"]`);
         if (linkEl) {
             if (progress === 100) {
-                linkEl.classList.add('module-complete-visual'); 
+                linkEl.classList.add('module-complete-visual');
             } else {
                 linkEl.classList.remove('module-complete-visual');
             }
@@ -1076,25 +1084,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function checkOverallCompletion() {
-        const allDone = courseData.every(module => 
-            module.lessons.every(lesson => lesson.completed || !lesson.quiz)
+        const allDone = courseData.every(module =>
+            module.lessons.every(lesson => lesson.completed)
         );
-        if (allDone && completionSection) { 
+        if (allDone && completionSection) {
             completionSection.classList.remove('hidden');
             completionSection.scrollIntoView({ behavior: 'smooth' });
             completionSection.querySelectorAll('.lucide-party-popper, h2, p, button').forEach(el => {
-                el.classList.add('animate-on-scroll', 'slide-up', 'is-visible');
+                el.classList.add('animate-on-scroll', 'slide-up');
+                setTimeout(() => el.classList.add('is-visible'), 100);
             });
         }
     }
 
     function initializeApp() {
-        loadSavedTheme(); 
+        loadSavedTheme();
 
         renderCourse();
-        observeModuleSections(); 
-        replaceLucideIcons(); 
-        
+        observeModuleSections();
+
         setTimeout(() => {
             const heroH2 = document.querySelector('#hero-section h2');
             const heroSubtitle = document.querySelector('#hero-section .hero-subtitle');
@@ -1103,29 +1111,34 @@ document.addEventListener('DOMContentLoaded', () => {
             if(heroH2) heroH2.classList.add('is-visible');
             if(heroSubtitle) heroSubtitle.classList.add('is-visible');
             if(scrollIndicator) scrollIndicator.classList.add('is-visible');
-        }, 100); 
+        }, 100);
 
         if (restartCourseButton) {
             restartCourseButton.onclick = () => {
                 courseData.forEach(m => m.lessons.forEach(l => l.completed = false));
                 if(completionSection) completionSection.classList.add('hidden');
-                if(scrollContainer) scrollContainer.scrollTop = 0; 
-                renderCourse(); 
+                if(scrollContainer) scrollContainer.scrollTop = 0;
+                renderCourse();
                 observeModuleSections();
-                updateActiveModuleNav(courseData.length > 0 ? `module-${courseData[0].moduleId}` : ''); 
-                loadSavedTheme(); 
-                 setTimeout(() => {
+                updateAllModuleProgressDisplays();
+                if (courseData.length > 0 && courseData[0].lessons.length > 0) {
+                     updateActiveModuleNav(`module-${courseData[0].moduleId}`);
+                } else {
+                    updateActiveModuleNav('');
+                }
+
+                setTimeout(() => {
                     const heroH2 = document.querySelector('#hero-section h2');
                     const heroSubtitle = document.querySelector('#hero-section .hero-subtitle');
                     const scrollIndicator = document.querySelector('#hero-section .scroll-down-indicator');
-                    if(heroH2) heroH2.classList.add('is-visible');
-                    if(heroSubtitle) heroSubtitle.classList.add('is-visible');
-                    if(scrollIndicator) scrollIndicator.classList.add('is-visible');
+                    if(heroH2) { heroH2.classList.remove('is-visible'); requestAnimationFrame(()=>heroH2.classList.add('is-visible'));}
+                    if(heroSubtitle) { heroSubtitle.classList.remove('is-visible'); requestAnimationFrame(()=>heroSubtitle.classList.add('is-visible'));}
+                    if(scrollIndicator) { scrollIndicator.classList.remove('is-visible'); requestAnimationFrame(()=>scrollIndicator.classList.add('is-visible'));}
                 }, 100);
             };
         }
     }
-    
+
     initializeApp();
 });
 </script>
