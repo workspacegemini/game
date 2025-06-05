@@ -3,268 +3,410 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gemini Skills Booster - Themed & Dynamic UI</title>
+    <title>Gemini Skills Booster - Hyper-Interactive UI</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/dist/lucide.min.js"></script>
 
     <style>
         :root {
-            /* Dark Mode Variables (Default) */
-            --dm-primary-bg: #03060A;
-            --dm-secondary-bg: #080B10;
-            --dm-tertiary-bg: #10141B;
-            --dm-accent-cyan: #00CFDE;
-            --dm-accent-cyan-hover: #00F0FF;
-            --dm-accent-cyan-glow: rgba(0, 207, 222, 0.25);
-            --dm-accent-magenta: #F02D8E;
-            --dm-accent-magenta-hover: #FF4AA1;
-            --dm-accent-magenta-glow: rgba(240, 45, 142, 0.2);
-            --dm-accent-green: #3EFF9A;
-            --dm-accent-green-hover: #6BFFB8;
-            --dm-accent-red: #FF4F4F;
-            --dm-accent-red-hover: #FF7272;
-            --dm-text-primary: #F0F8FF; /* Alice Blue - very light */
-            --dm-text-secondary: #A0B0C0;
-            --dm-text-interactive: var(--dm-accent-cyan-hover);
-            --dm-border-color: #1D232C;
-            --dm-card-shadow: rgba(0, 0, 0, 0.6);
-            --dm-aurora-opacity: 0.07;
+            /* --- Cyber Theme (Original Neon) --- */
+            /* Dark Cyber */
+            --dc-primary-bg: #03060A;
+            --dc-secondary-bg: #080B10;
+            --dc-tertiary-bg: #10141B;
+            --dc-accent-primary: #00CFDE; /* Cyan */
+            --dc-accent-primary-hover: #00F0FF;
+            --dc-accent-primary-glow: rgba(0, 207, 222, 0.3);
+            --dc-accent-secondary: #F02D8E; /* Magenta */
+            --dc-accent-secondary-hover: #FF4AA1;
+            --dc-accent-secondary-glow: rgba(240, 45, 142, 0.25);
+            --dc-accent-green: #3EFF9A;
+            --dc-accent-green-hover: #6BFFB8;
+            --dc-accent-red: #FF4F4F;
+            --dc-accent-red-hover: #FF7272; 
+            --dc-text-primary: #F0F8FF;
+            --dc-text-secondary: #A0B0C0;
+            --dc-border-color: #1D232C;
+            --dc-aurora-opacity: 0.07;
 
-            /* Light Mode Variables */
-            --lm-primary-bg: #F8F9FA; /* Very light gray */
-            --lm-secondary-bg: #FFFFFF; 
-            --lm-tertiary-bg: #E9ECEF; /* Light gray for cards/hovers */
-            --lm-accent-cyan: #007BFF; /* Standard blue */
-            --lm-accent-cyan-hover: #0056b3;
-            --lm-accent-cyan-glow: rgba(0, 123, 255, 0.15);
-            --lm-accent-magenta: #D81B60; /* Strong pink */
-            --lm-accent-magenta-hover: #C2185B;
-            --lm-accent-magenta-glow: rgba(216, 27, 96, 0.1);
-            --lm-accent-green: #28A745; /* Standard green */
-            --lm-accent-green-hover: #218838;
-            --lm-accent-red: #DC3545; /* Standard red */
-            --lm-accent-red-hover: #C82333;
-            --lm-text-primary: #212529; /* Dark gray for text */
-            --lm-text-secondary: #495057;
-            --lm-text-interactive: var(--lm-accent-cyan);
-            --lm-border-color: #DEE2E6; /* Light border */
-            --lm-card-shadow: rgba(0, 0, 0, 0.1);
-            --lm-aurora-opacity: 0.03; /* Even more subtle for light mode */
+            /* Light Cyber */
+            --lc-primary-bg: #EFFBFF; 
+            --lc-secondary-bg: #FFFFFF;
+            --lc-tertiary-bg: #E0F5FA;
+            --lc-accent-primary: #00A0B0; 
+            --lc-accent-primary-hover: #007A87;
+            --lc-accent-primary-glow: rgba(0, 160, 176, 0.2);
+            --lc-accent-secondary: #D9006C; 
+            --lc-accent-secondary-hover: #B30059;
+            --lc-accent-secondary-glow: rgba(217, 0, 108, 0.15);
+            --lc-accent-green: #00C853;
+            --lc-accent-green-hover: #00E676; 
+            --lc-accent-red: #D50000;
+            --lc-accent-red-hover: #FF1744;
+            --lc-text-primary: #051D2A;
+            --lc-text-secondary: #3E5A6E;
+            --lc-border-color: #B3E0F0;
+            --lc-aurora-opacity: 0.04;
 
-            /* Applied Variables (default to dark mode) */
-            --primary-bg: var(--dm-primary-bg);
-            --secondary-bg: var(--dm-secondary-bg);
-            --tertiary-bg: var(--dm-tertiary-bg);
-            --accent-cyan: var(--dm-accent-cyan);
-            --accent-cyan-hover: var(--dm-accent-cyan-hover);
-            --accent-cyan-glow: var(--dm-accent-cyan-glow);
-            --accent-magenta: var(--dm-accent-magenta);
-            --accent-magenta-hover: var(--dm-accent-magenta-hover);
-            --accent-magenta-glow: var(--dm-accent-magenta-glow);
-            --accent-green: var(--dm-accent-green);
-            --accent-green-hover: var(--dm-accent-green-hover);
-            --accent-red: var(--dm-accent-red);
-            --accent-red-hover: var(--dm-accent-red-hover);
-            --text-primary: var(--dm-text-primary);
-            --text-secondary: var(--dm-text-secondary);
-            --text-interactive: var(--dm-text-interactive);
-            --border-color: var(--dm-border-color);
-            --card-shadow: var(--dm-card-shadow);
-            --aurora-opacity: var(--dm-aurora-opacity);
-             /* Aurora colors are consistent, only opacity changes */
+            /* --- Zenith Calm Theme --- */
+            /* Dark Zenith */
+            --dz-primary-bg: #0D111C;
+            --dz-secondary-bg: #161D2F;
+            --dz-tertiary-bg: #212A40;
+            --dz-accent-primary: #4FD1C5; /* Teal */
+            --dz-accent-primary-hover: #6BEBD8;
+            --dz-accent-primary-glow: rgba(79, 209, 197, 0.2);
+            --dz-accent-secondary: #F6E05E; /* Muted Gold */
+            --dz-accent-secondary-hover: #F9F07A;
+            --dz-accent-secondary-glow: rgba(246, 224, 94, 0.15);
+            --dz-accent-green: #68D391;
+            --dz-accent-green-hover: #81E6D9; 
+            --dz-accent-red: #FC8181;
+            --dz-accent-red-hover: #FEB2B2; 
+            --dz-text-primary: #E2E8F0;
+            --dz-text-secondary: #A0AEC0;
+            --dz-border-color: #2D3748;
+            --dz-aurora-opacity: 0.05;
+
+            /* Light Zenith */
+            --lz-primary-bg: #F7FAFC;
+            --lz-secondary-bg: #FFFFFF;
+            --lz-tertiary-bg: #EDF2F7;
+            --lz-accent-primary: #3182CE; /* Professional Blue */
+            --lz-accent-primary-hover: #2B6CB0;
+            --lz-accent-primary-glow: rgba(49, 130, 206, 0.15);
+            --lz-accent-secondary: #A0AEC0; /* Silver/Gray */
+            --lz-accent-secondary-hover: #718096;
+            --lz-accent-secondary-glow: rgba(160, 174, 192, 0.1);
+            --lz-accent-green: #38A169;
+            --lz-accent-green-hover: #2F855A; 
+            --lz-accent-red: #E53E3E;
+            --lz-accent-red-hover: #C53030; 
+            --lz-text-primary: #1A202C;
+            --lz-text-secondary: #4A5568;
+            --lz-border-color: #CBD5E0;
+            --lz-aurora-opacity: 0.02;
+
+
+            /* Applied Variables (Initially Dark Cyber) */
+            --primary-bg: var(--dc-primary-bg);
+            --secondary-bg: var(--dc-secondary-bg);
+            --tertiary-bg: var(--dc-tertiary-bg);
+            --accent-primary: var(--dc-accent-primary);
+            --accent-primary-hover: var(--dc-accent-primary-hover);
+            --accent-primary-glow: var(--dc-accent-primary-glow);
+            --accent-secondary: var(--dc-accent-secondary);
+            --accent-secondary-hover: var(--dc-accent-secondary-hover);
+            --accent-secondary-glow: var(--dc-accent-secondary-glow);
+            --accent-green: var(--dc-accent-green);
+            --accent-green-hover: var(--dc-accent-green-hover);
+            --accent-red: var(--dc-accent-red);
+            --accent-red-hover: var(--dc-accent-red-hover); 
+            --text-primary: var(--dc-text-primary);
+            --text-secondary: var(--dc-text-secondary);
+            --text-interactive: var(--dc-accent-primary-hover); 
+            --border-color: var(--dc-border-color);
+            --card-shadow: var(--dm-card-shadow); 
+            --aurora-opacity: var(--dc-aurora-opacity);
             --aurora-1: #00CFDE; 
             --aurora-2: #F02D8E;
             --aurora-3: #FFB300;
             --aurora-4: #7C4DFF;
         }
-
-        body.light-mode {
-            --primary-bg: var(--lm-primary-bg);
-            --secondary-bg: var(--lm-secondary-bg);
-            --tertiary-bg: var(--lm-tertiary-bg);
-            --accent-cyan: var(--lm-accent-cyan);
-            --accent-cyan-hover: var(--lm-accent-cyan-hover);
-            --accent-cyan-glow: var(--lm-accent-cyan-glow);
-            --accent-magenta: var(--lm-accent-magenta);
-            --accent-magenta-hover: var(--lm-accent-magenta-hover);
-            --accent-magenta-glow: var(--lm-accent-magenta-glow);
-            --accent-green: var(--lm-accent-green);
-            --accent-green-hover: var(--lm-accent-green-hover);
-            --accent-red: var(--lm-accent-red);
-            --accent-red-hover: var(--lm-accent-red-hover);
-            --text-primary: var(--lm-text-primary);
-            --text-secondary: var(--lm-text-secondary);
-            --text-interactive: var(--lm-text-interactive);
-            --border-color: var(--lm-border-color);
-            --card-shadow: var(--lm-card-shadow);
-            --aurora-opacity: var(--lm-aurora-opacity);
+        
+        body.theme-light-cyber {
+            --primary-bg: var(--lc-primary-bg); --secondary-bg: var(--lc-secondary-bg); --tertiary-bg: var(--lc-tertiary-bg);
+            --accent-primary: var(--lc-accent-primary); --accent-primary-hover: var(--lc-accent-primary-hover); --accent-primary-glow: var(--lc-accent-primary-glow);
+            --accent-secondary: var(--lc-accent-secondary); --accent-secondary-hover: var(--lc-accent-secondary-hover); --accent-secondary-glow: var(--lc-accent-secondary-glow);
+            --accent-green: var(--lc-accent-green); --accent-green-hover: var(--lc-accent-green-hover); 
+            --accent-red: var(--lc-accent-red); --accent-red-hover: var(--lc-accent-red-hover);
+            --text-primary: var(--lc-text-primary); --text-secondary: var(--lc-text-secondary); --text-interactive: var(--lc-accent-primary);
+            --border-color: var(--lc-border-color); --card-shadow: var(--lm-card-shadow); --aurora-opacity: var(--lc-aurora-opacity);
+        }
+        body.theme-dark-zenith {
+            --primary-bg: var(--dz-primary-bg); --secondary-bg: var(--dz-secondary-bg); --tertiary-bg: var(--dz-tertiary-bg);
+            --accent-primary: var(--dz-accent-primary); --accent-primary-hover: var(--dz-accent-primary-hover); --accent-primary-glow: var(--dz-accent-primary-glow);
+            --accent-secondary: var(--dz-accent-secondary); --accent-secondary-hover: var(--dz-accent-secondary-hover); --accent-secondary-glow: var(--dz-accent-secondary-glow);
+            --accent-green: var(--dz-accent-green); --accent-green-hover: var(--dz-accent-green-hover); 
+            --accent-red: var(--dz-accent-red); --accent-red-hover: var(--dz-accent-red-hover);
+            --text-primary: var(--dz-text-primary); --text-secondary: var(--dz-text-secondary); --text-interactive: var(--dz-accent-primary-hover);
+            --border-color: var(--dz-border-color); --card-shadow: var(--dm-card-shadow); --aurora-opacity: var(--dz-aurora-opacity);
+        }
+        body.theme-light-zenith {
+            --primary-bg: var(--lz-primary-bg); --secondary-bg: var(--lz-secondary-bg); --tertiary-bg: var(--lz-tertiary-bg);
+            --accent-primary: var(--lz-accent-primary); --accent-primary-hover: var(--lz-accent-primary-hover); --accent-primary-glow: var(--lz-accent-primary-glow);
+            --accent-secondary: var(--lz-accent-secondary); --accent-secondary-hover: var(--lz-accent-secondary-hover); --accent-secondary-glow: var(--lz-accent-secondary-glow);
+            --accent-green: var(--lz-accent-green); --accent-green-hover: var(--lz-accent-green-hover); 
+            --accent-red: var(--lz-accent-red); --accent-red-hover: var(--lz-accent-red-hover);
+            --text-primary: var(--lz-text-primary); --text-secondary: var(--lz-text-secondary); --text-interactive: var(--lz-accent-primary);
+            --border-color: var(--lz-border-color); --card-shadow: var(--lm-card-shadow); --aurora-opacity: var(--lz-aurora-opacity);
         }
 
-
-        @keyframes animatedAuroraBackground { /* Unchanged */
-            0% { background-position: 0% 0%; transform: scale(1); }
-            25% { background-position: 100% 0%; transform: scale(1.05); }
-            50% { background-position: 100% 100%; transform: scale(1); }
-            75% { background-position: 0% 100%; transform: scale(1.05); }
-            100% { background-position: 0% 0%; transform: scale(1); }
+        @keyframes animatedAuroraBackground {
+            0% { background-position: 0% 0%; transform: scale(1.02) rotate(0deg); }
+            25% { background-position: 100% 0%; transform: scale(1.07) rotate(0.5deg); } 
+            50% { background-position: 100% 100%; transform: scale(1.02) rotate(0deg); }
+            75% { background-position: 0% 100%; transform: scale(1.07) rotate(-0.5deg); }
+            100% { background-position: 0% 0%; transform: scale(1.02) rotate(0deg); }
         }
-        @keyframes textShine { /* Unchanged */
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+        @keyframes textShine {
+            0% { background-position: -250% center; } 100% { background-position: 250% center; }
         }
-        @keyframes subtleFloat { /* Unchanged */
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
+        @keyframes subtleFloatEnhanced { 
+            0%, 100% { transform: translateY(0) rotate(-0.5deg) scale(1); }
+            50% { transform: translateY(-12px) rotate(0.5deg) scale(1.03); }
         }
-        @keyframes fadeInSlideUp { /* Unchanged */
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(50px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); }
         }
-        @keyframes pop { /* Unchanged */
-            0% { transform: scale(0.3); opacity: 0; }
-            70% { transform: scale(1.15); opacity: 1; }
-            100% { transform: scale(1); opacity: 1; }
+        @keyframes pop {
+            0% { transform: scale(0.3) rotate(-15deg); opacity: 0; }
+            60% { transform: scale(1.25) rotate(8deg); opacity: 1; } 
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
         }
-        @keyframes tada { /* Unchanged */
-            0% {transform: scale(1);} 10%, 20% {transform: scale(0.9) rotate(-3deg);}
-            30%, 50%, 70%, 90% {transform: scale(1.1) rotate(3deg);}
-            40%, 60%, 80% {transform: scale(1.1) rotate(-3deg);} 100% {transform: scale(1) rotate(0);}
+        @keyframes tadaEnhanced { 
+            0% {transform: scale(1) rotate(0deg);} 
+            10%, 20% {transform: scale(0.9) rotate(-7deg) translateY(-2px);}
+            30%, 50%, 70%, 90% {transform: scale(1.2) rotate(7deg) translateY(2px);}
+            40%, 60%, 80% {transform: scale(1.2) rotate(-7deg) translateY(-2px);}
+            100% {transform: scale(1) rotate(0deg);}
         }
-        @keyframes spin { /* Unchanged */
-            0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @keyframes pulseIcon {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 12px var(--accent-primary-glow));}
+            50% { transform: scale(1.2) rotate(8deg); opacity: 0.85; filter: drop-shadow(0 0 22px var(--accent-primary-glow));}
         }
-        @keyframes pulseIcon { /* Unchanged */
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; filter: drop-shadow(0 0 10px var(--accent-cyan-glow));}
-            50% { transform: scale(1.15) rotate(5deg); opacity: 0.8; filter: drop-shadow(0 0 20px var(--accent-cyan-glow));}
+        @keyframes feedbackCelebration { 
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            25% { transform: translateY(-5px) scale(1.05); color: var(--accent-green-hover); }
+            50% { transform: translateY(0) scale(1); opacity: 1; }
+            75% { transform: translateY(-3px) scale(1.03); }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        @keyframes shake { /* For incorrect answer button */
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); } /* More shake */
+            20%, 40%, 60%, 80% { transform: translateX(6px); }
+        }
+        @keyframes iconDrawIn { 
+            from { stroke-dashoffset: 24; } to { stroke-dashoffset: 0; }
+        }
+        .animate-check { /* Apply to checkmark icon */
+             stroke-dasharray: 24;
+             stroke-dashoffset: 24;
+             animation: iconDrawIn 0.5s ease-out forwards 0.2s; /* Delay start */
         }
 
 
         html { scroll-behavior: smooth; }
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--primary-bg);
-            color: var(--text-primary);
+            background: var(--primary-bg); color: var(--text-primary);
             overflow-x: hidden; position: relative;
             -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-            transition: background-color 0.5s ease, color 0.5s ease; /* Theme transition */
+            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         body::before { 
             content: ""; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             width: 100%; height: 100%;
             background: 
-                radial-gradient(ellipse at 15% 25%, var(--aurora-1), transparent 35%),
-                radial-gradient(ellipse at 85% 35%, var(--aurora-2), transparent 45%),
-                radial-gradient(ellipse at 35% 75%, var(--aurora-3), transparent 40%),
-                radial-gradient(ellipse at 65% 85%, var(--aurora-4), transparent 50%);
-            background-size: 300% 300%; 
-            animation: animatedAuroraBackground 60s ease-in-out infinite;
-            opacity: var(--aurora-opacity); /* Controlled by theme */
+                radial-gradient(ellipse at 10% 20%, var(--aurora-1), transparent 40%),
+                radial-gradient(ellipse at 90% 30%, var(--aurora-2), transparent 50%),
+                radial-gradient(ellipse at 30% 80%, var(--aurora-3), transparent 45%),
+                radial-gradient(ellipse at 70% 70%, var(--aurora-4), transparent 60%);
+            background-size: 280% 280%; 
+            animation: animatedAuroraBackground 50s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+            opacity: var(--aurora-opacity); 
             z-index: -1; pointer-events: none;
             transition: opacity 0.5s ease;
         }
 
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar { width: 7px; height: 7px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--tertiary-bg); border-radius: 10px; transition: background-color 0.3s ease; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--accent-cyan); }
+        ::-webkit-scrollbar-thumb { background: color-mix(in srgb, var(--tertiary-bg) 70%, transparent); border-radius: 10px; transition: background-color 0.3s ease; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
 
         #app-wrapper { display: flex; height: 100vh; overflow: hidden; }
 
         #sticky-sidebar-nav {
-            width: 280px; flex-shrink: 0;
-            background-color: color-mix(in srgb, var(--primary-bg) 80%, transparent);
-            backdrop-filter: blur(25px) saturate(170%);
-            -webkit-backdrop-filter: blur(25px) saturate(170%);
+            width: 290px; flex-shrink: 0;
+            background-color: color-mix(in srgb, var(--primary-bg) 75%, transparent);
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
             border-right: 1px solid var(--border-color);
-            padding: 1.5rem; /* Reduced top/bottom padding */
+            padding: 1.75rem 1.25rem; 
             overflow-y: auto; height: 100vh; position: fixed; top: 0; left: 0; z-index: 100;
             display: flex; flex-direction: column;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
-        #sidebar-header { padding: 0.5rem 0; } /* Added padding */
+        #sidebar-header { padding: 0.5rem 0.25rem; } 
         #sidebar-header h1 {
-            font-weight: 800; font-size: 1.5rem; letter-spacing: -0.03em;
-            background: linear-gradient(90deg, var(--accent-cyan-hover), var(--accent-magenta));
+            font-weight: 800; font-size: 1.6rem; letter-spacing: -0.035em;
+            background: linear-gradient(90deg, var(--accent-primary-hover), var(--accent-secondary)); /* Theme sensitive */
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 0.25rem; /* Reduced margin */
+            margin-bottom: 0.25rem; 
         }
-        #sidebar-header p { font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
+        #sidebar-header p { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.75rem; transition: color 0.5s ease;}
         
+        #theme-toggle-container { 
+            position: relative; /* For the "Welcome" text */
+            margin: 0 auto 1.75rem auto; 
+            display: flex; flex-direction: column; align-items: center;
+        }
         #theme-toggle-button {
-            background: var(--tertiary-bg);
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem; border-radius: 0.5rem;
-            margin-bottom: 1.5rem;
-            cursor: pointer;
-            display: flex; align-items: center; justify-content: center;
-            width: 100%;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            background: transparent; /* Let icon be the button */
+            color: var(--text-secondary); /* Icon color */
+            border: none; /* No border for icon button */
+            padding: 0.5rem; /* Adjust padding for touch target */
+            border-radius: 50%;
+            cursor: pointer; display: flex; align-items: center; justify-content: center;
+            width: 48px; height: 48px; 
+            position: relative; overflow: hidden; 
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
         }
         #theme-toggle-button:hover {
-            background: var(--border-color);
-            color: var(--text-primary);
+             transform: scale(1.15) rotate(25deg); /* More playful hover */
+             color: var(--text-primary);
         }
-        #theme-toggle-button .lucide { width: 20px; height: 20px; }
+        #theme-toggle-button:active { transform: scale(0.95) rotate(0deg); }
+        #theme-toggle-button .lucide { 
+            width: 26px; height: 26px; /* Larger icons */
+            position: absolute; 
+            transition: transform 0.7s cubic-bezier(0.68, -0.6, 0.32, 1.65), opacity 0.6s ease-in-out; /* Slower, more dramatic */
+        }
+        /* Initial states for animation */
+        #theme-icon-sun { transform: rotate(-180deg) scale(0); opacity: 0; } /* Sun starts hidden and rotated */
+        #theme-icon-moon { transform: rotate(0deg) scale(1); opacity: 1; } /* Moon visible in dark mode */
+
+        /* Light mode: Sun visible, Moon hidden */
+        body[class*="light"] #theme-icon-sun { transform: rotate(0deg) scale(1); opacity: 1; }
+        body[class*="light"] #theme-icon-moon { transform: rotate(180deg) scale(0); opacity: 0; }
 
 
-        #module-navigation-list { flex-grow: 1; } /* Allow list to take available space */
+        #theme-welcome-text {
+            position: absolute;
+            top: calc(100% + 10px); /* Position below the button */
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background-color: var(--tertiary-bg);
+            padding: 0.3rem 0.6rem;
+            border-radius: 0.3rem;
+            opacity: 0;
+            transform: translateY(-15px) scale(0.8); /* Start smaller and further up */
+            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.1s, color 0.5s ease, background-color 0.5s ease; 
+            pointer-events: none;
+            white-space: nowrap;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+        }
+        #theme-welcome-text.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+
+        #module-navigation-list { flex-grow: 1; } 
 
         .sidebar-module-link {
-            display: flex; align-items: center; padding: 0.8rem 1rem; border-radius: 0.6rem;
-            color: var(--text-secondary); font-weight: 500; transition: all 0.25s ease;
-            margin-bottom: 0.5rem; border: 1px solid transparent;
+            display: flex; align-items: center; padding: 0.85rem 1.1rem; border-radius: 0.75rem;
+            color: var(--text-secondary); font-weight: 500; transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            margin-bottom: 0.6rem; border: 1px solid transparent; position: relative;
         }
-        .sidebar-module-link .lucide { margin-right: 0.75rem; width: 20px; height: 20px; stroke-width: 2; transition: color 0.25s ease; }
-        .sidebar-module-link:hover { background-color: var(--tertiary-bg); color: var(--text-primary); border-color: var(--border-color); }
+        .sidebar-module-link .lucide { margin-right: 0.85rem; width: 20px; height: 20px; stroke-width: 2; transition: color 0.3s ease, transform 0.3s ease; }
+        .sidebar-module-link:hover { background-color: var(--tertiary-bg); color: var(--text-primary); border-color: var(--border-color); transform: translateX(5px); }
+        .sidebar-module-link:hover .lucide { transform: scale(1.1) rotate(-3deg); } /* Subtle icon animation */
         .sidebar-module-link.active {
-            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
-            color: white !important; font-weight: 600; box-shadow: 0 5px 15px var(--accent-cyan-glow);
+            background: linear-gradient(95deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            color: white !important; font-weight: 600; 
+            box-shadow: 0 6px 20px var(--accent-primary-glow), 0 3px 10px var(--accent-secondary-glow);
+            transform: translateX(5px) scale(1.02);
         }
-        .sidebar-module-link.active .lucide { color: white !important; }
-        .sidebar-module-link .module-progress {
-            margin-left: auto; font-size: 0.75rem; background-color: var(--tertiary-bg);
-            padding: 0.1rem 0.4rem; border-radius: 0.25rem;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        .sidebar-module-link.active .lucide { color: white !important; transform: scale(1.1); }
+        
+        .sidebar-module-link .module-progress { 
+            margin-left: auto; display: flex; align-items: center;
+            font-size: 0.75rem; 
+            background-color: color-mix(in srgb, var(--tertiary-bg) 70%, transparent);
+            padding: 2px; 
+            border-radius: 0.3rem;
+            width: 60px; /* Fixed width for progress bar container */
+            height: 18px;
+            position: relative; 
         }
-        .sidebar-module-link.active .module-progress { background-color: rgba(255,255,255,0.2); color: white; }
+         .sidebar-module-link .module-progress-bar-inner { 
+            height: 100%; background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover)); 
+            border-radius: 0.2rem; 
+            width: 0%; 
+            transition: width 0.8s cubic-bezier(0.25, 0.1, 0.25, 1); /* Smooth charge-up */
+            box-shadow: 0 0 5px color-mix(in srgb, var(--accent-green) 50%, transparent);
+        }
+        .sidebar-module-link .module-progress-text {
+            position: absolute; 
+            left: 50%; top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 0.65rem; 
+            color: var(--text-primary); 
+            font-weight: 600;
+            line-height: 1;
+            mix-blend-mode: exclusion; /* Try exclusion for better contrast on varied backgrounds */
+        }
+        body.theme-light-cyber .sidebar-module-link .module-progress-text,
+        body.theme-light-zenith .sidebar-module-link .module-progress-text {
+            color: var(--text-primary); /* Darker text in light modes */
+            mix-blend-mode: normal; 
+        }
+
+        .sidebar-module-link.active .module-progress { background-color: rgba(255,255,255,0.15); }
+        .sidebar-module-link.active .module-progress-text { color: white; mix-blend-mode: normal; }
+
+        .sidebar-module-link.module-complete-visual .module-progress-bar-inner { 
+             background-image: linear-gradient(90deg, var(--accent-green), var(--accent-green-hover));
+        }
+        .sidebar-module-link.module-complete-visual .module-progress-text {
+             color: color-mix(in srgb, var(--primary-bg) 90%, black);
+        }
+         body.theme-light-cyber .sidebar-module-link.module-complete-visual .module-progress-text,
+         body.theme-light-zenith .sidebar-module-link.module-complete-visual .module-progress-text {
+             color: white;
+        }
+         .sidebar-module-link.module-complete-visual:not(.active) .lucide { color: var(--accent-green); animation: pulseIcon 1.5s infinite; }
 
 
-        #scroll-container { flex-grow: 1; overflow-y: auto; height: 100vh; padding-left: 280px; }
+        #scroll-container { flex-grow: 1; overflow-y: auto; height: 100vh; padding-left: 290px; }
 
-        .section-padding { padding: 6rem 4rem; } 
-        @media (max-width: 768px) {
-            .section-padding { padding: 4rem 1.5rem; }
-            #sticky-sidebar-nav { width: 100%; height: auto; position: relative; z-index: 101; /* Ensure it's above content when stacked */ border-right: none; border-bottom: 1px solid var(--border-color); }
+        .section-padding { padding: 7rem 5rem; } 
+        @media (max-width: 1024px) { 
+            .section-padding { padding: 5rem 2rem; }
+            #sticky-sidebar-nav { width: 100%; height: auto; position: relative; z-index: 101; border-right: none; border-bottom: 1px solid var(--border-color); }
             #scroll-container { padding-left: 0; }
             #app-wrapper { flex-direction: column; }
         }
+        @media (max-width: 640px) { .section-padding { padding: 4rem 1rem; } }
 
 
         #hero-section {
-            min-height: 90vh; display: flex; flex-direction: column;
+            min-height: 95vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center; position: relative;
         }
         #hero-section h2 {
-            font-size: clamp(2.8rem, 9vw, 6rem); font-weight: 900; letter-spacing: -0.05em; line-height: 1.05;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(120deg, var(--accent-cyan-hover) 15%, var(--accent-magenta-hover) 55%, #FFD700 90%);
+            font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 900; letter-spacing: -0.055em; line-height: 1.0;
+            margin-bottom: 2rem;
+            background: linear-gradient(125deg, var(--accent-primary-hover) 10%, var(--accent-secondary-hover) 50%, #FFD700 85%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: textShine 7s linear infinite, fadeInSlideUp 1s ease-out 0.2s backwards;
-            background-size: 280% auto;
+            animation: textShine 6s ease-in-out infinite, fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s backwards;
+            background-size: 300% auto;
         }
         #hero-section .hero-subtitle {
-            font-size: clamp(1.1rem, 3.5vw, 1.6rem); color: var(--text-secondary); max-width: 750px;
-            margin-bottom: 3rem; line-height: 1.65;
-            animation: fadeInSlideUp 1s ease-out 0.5s backwards;
+            font-size: clamp(1.15rem, 4vw, 1.75rem); color: var(--text-secondary); max-width: 800px;
+            margin-bottom: 3.5rem; line-height: 1.7;
+            animation: fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.5s backwards;
         }
         #hero-section .scroll-down-indicator {
-            position: absolute; bottom: 2.5rem;
-            animation: subtleFloat 2.2s ease-in-out infinite, fadeInSlideUp 1s ease-out 0.8s backwards;
+            position: absolute; bottom: 3rem;
+            animation: subtleFloatEnhanced 2.8s ease-in-out infinite 1s, fadeInSlideUp 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) 0.8s backwards; /* Enhanced float */
         }
-        #hero-section .scroll-down-indicator .lucide { width: 32px; height: 32px; color: var(--accent-cyan); }
+        #hero-section .scroll-down-indicator .lucide { width: 36px; height: 36px; color: var(--accent-primary); opacity: 0.8; }
 
         .module-section {
             min-height: 100vh; border-bottom: 1px solid var(--border-color);
@@ -273,136 +415,139 @@
         }
         .module-section:last-of-type { border-bottom: none; }
 
-        .module-header {
-            text-align: center; margin-bottom: 5rem; /* More space */
-            /* animation applied by JS observer */
-        }
-        .module-title-main-wrapper { /* Wrapper for text animation */
-            overflow: hidden; /* Clip animation */
-        }
+        .module-header { text-align: center; margin-bottom: 6rem; }
+        .module-title-main-wrapper { overflow: hidden; }
         .module-title-main {
-            font-size: clamp(2.2rem, 7vw, 4.5rem); font-weight: 800; letter-spacing: -0.035em;
-            margin-bottom: 0.75rem; color: var(--text-primary);
-            display: inline-block; /* For transform origin */
-            transform: translateY(100%); opacity: 0;
+            font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; letter-spacing: -0.04em;
+            margin-bottom: 1rem; color: var(--text-primary);
+            display: inline-block; transform: translateY(100%); opacity: 0;
             transition: color 0.5s ease;
         }
         .module-header.is-visible .module-title-main {
-            animation: revealText 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-        @keyframes revealText {
-            to { transform: translateY(0); opacity: 1; }
+            animation: revealText 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
 
         .module-description {
-            font-size: 1.15rem; color: var(--text-secondary); max-width: 650px;
+            font-size: 1.2rem; color: var(--text-secondary); max-width: 700px;
             margin: 0 auto 1.5rem auto;
             transition: color 0.5s ease;
         }
 
         .lesson-block {
-            background-color: color-mix(in srgb, var(--secondary-bg) 70%, transparent);
+            background-color: color-mix(in srgb, var(--secondary-bg) 60%, transparent);
             border: 1px solid var(--border-color);
-            border-radius: 1.25rem; /* More rounded */
-            padding: 2.5rem 3rem; /* More padding */
-            margin-bottom: 3.5rem; /* More spacing */
-            box-shadow: 0 15px 40px var(--card-shadow);
-            opacity: 0; transform: translateY(35px);
-            transition: opacity 0.7s ease-out, transform 0.7s ease-out, background-color 0.5s ease, border-color 0.5s ease;
+            border-radius: 1.5rem; 
+            padding: 3rem 3.5rem; 
+            margin-bottom: 4rem; 
+            box-shadow: 0 20px 50px var(--card-shadow);
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), background-color 0.5s ease, border-color 0.5s ease;
         }
         .lesson-block.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* Styling for elements inside .lesson-block, like #lesson-title, #lesson-instruction etc. */
-        /* Will inherit themed variables. Adjust specifics if needed for light/dark contrast. */
         .lesson-block #lesson-title { 
-            font-size: clamp(1.6rem, 4.5vw, 2.8rem); font-weight: 700;
-            letter-spacing: -0.025em; color: var(--text-interactive);
-            margin-bottom: 1.75rem;
+            font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700;
+            letter-spacing: -0.03em; color: var(--text-interactive);
+            margin-bottom: 2rem;
             transition: color 0.5s ease;
         }
-        .lesson-block #lesson-instruction { color: var(--text-secondary); line-height: 1.75; font-size: 1.05rem; transition: color 0.5s ease; }
+        .lesson-block #lesson-instruction { color: var(--text-secondary); line-height: 1.8; font-size: 1.1rem; transition: color 0.5s ease; }
         .lesson-block #lesson-instruction strong { color: var(--text-primary); font-weight: 600; transition: color 0.5s ease; }
         .lesson-block #lesson-instruction code {
-            background-color: var(--tertiary-bg); color: var(--accent-cyan);
-            padding: 0.25rem 0.5rem; border-radius: 0.4rem;
+            background-color: var(--tertiary-bg); color: var(--accent-primary); /* Use primary accent for code */
+            padding: 0.3rem 0.6rem; border-radius: 0.5rem;
             font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
             border: 1px solid var(--border-color);
             transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
         }
-        .lesson-block #lesson-instruction ul li::marker { color: var(--accent-cyan); transition: color 0.5s ease; }
+        .lesson-block #lesson-instruction ul li::marker { color: var(--accent-primary); transition: color 0.5s ease; font-size: 1.2em; }
 
         .lesson-block #lesson-example {
-            background-color: color-mix(in srgb, var(--border-color) 30%, transparent);
+            background-color: color-mix(in srgb, var(--border-color) 20%, transparent);
             border: 1px solid var(--border-color);
-            padding: 1.5rem; border-radius: 0.75rem; margin-top: 1.75rem;
+            padding: 1.75rem; border-radius: 1rem; margin-top: 2rem;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
-        .lesson-block #lesson-example h4 { color: var(--text-primary); font-weight: 600; font-size: 1rem; transition: color 0.5s ease; }
-        .lesson-block #lesson-example p { font-size: 0.9rem; color: var(--text-secondary); transition: color 0.5s ease; }
+        .lesson-block #lesson-example h4 { color: var(--text-primary); font-weight: 600; font-size: 1.05rem; transition: color 0.5s ease; }
+        .lesson-block #lesson-example p { font-size: 0.95rem; color: var(--text-secondary); transition: color 0.5s ease; }
 
-        .lesson-block #quiz-area { border-top: 1px solid var(--border-color); margin-top: 2.5rem; padding-top: 2.5rem; transition: border-color 0.5s ease;}
-        .lesson-block #quiz-question-title { color: var(--text-primary); font-weight: 700; font-size: 1.25rem; transition: color 0.5s ease;}
-        .lesson-block #quiz-question { color: var(--text-primary); font-size: 1.1rem; font-weight: 500; margin-bottom: 1.5rem; transition: color 0.5s ease;}
+        .lesson-block #quiz-area { border-top: 1px solid var(--border-color); margin-top: 3rem; padding-top: 3rem; transition: border-color 0.5s ease;}
+        .lesson-block #quiz-question-title { color: var(--text-primary); font-weight: 700; font-size: 1.3rem; transition: color 0.5s ease;}
+        .lesson-block #quiz-question { color: var(--text-primary); font-size: 1.15rem; font-weight: 500; margin-bottom: 1.75rem; transition: color 0.5s ease;}
         
         .lesson-block .lesson-option {
             background-color: var(--tertiary-bg); border: 2px solid var(--border-color); color: var(--text-primary);
-            transition: all 0.25s ease; border-radius: 0.75rem; padding: 1rem 1.25rem; font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
+            border-radius: 0.85rem; padding: 1.1rem 1.35rem; font-weight: 500;
+            position:relative;
         }
         .lesson-block .lesson-option:hover:not(:disabled) {
-            background-color: var(--border-color); border-color: var(--accent-cyan);
-            transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: var(--border-color); border-color: var(--accent-primary);
+            transform: translateY(-4px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.25);
         }
-        /* Correct and Incorrect styles using themed variables */
+        .lesson-block .lesson-option:active:not(:disabled) {
+             transform: translateY(-2px) scale(0.98);
+        }
         .lesson-block .lesson-option.correct { 
             background: linear-gradient(135deg, var(--accent-green), var(--accent-green-hover)) !important;
             border-color: var(--accent-green-hover) !important; 
-            color: var(--lm-primary-bg) !important; /* Ensure good contrast on green */
-             font-weight: 600;
+            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important; /* Ensure contrast */
+            font-weight: 600;
+            transform: scale(1.03); 
+            animation: feedbackPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); 
         }
-        body.light-mode .lesson-block .lesson-option.correct {
-             color: var(--lm-secondary-bg) !important; /* White text on green for light mode */
+        body[class*="light"] .lesson-block .lesson-option.correct { 
+            color: white !important; 
         }
 
         .lesson-block .lesson-option.incorrect { 
             background: linear-gradient(135deg, var(--accent-red), var(--accent-red-hover)) !important;
             border-color: var(--accent-red-hover) !important; 
-            color: var(--lm-primary-bg) !important;  /* Ensure good contrast on red */
+            color: color-mix(in srgb, var(--primary-bg) 85%, black) !important; /* Ensure contrast */
             font-weight: 600;
+            animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
         }
-         body.light-mode .lesson-block .lesson-option.incorrect {
-             color: var(--lm-secondary-bg) !important; /* White text on red for light mode */
+         body[class*="light"] .lesson-block .lesson-option.incorrect { 
+            color: white !important; 
         }
         
-        .lesson-block #feedback-area p { font-weight: 500; padding: 0.75rem 1rem; border-radius: 0.5rem; }
-        .lesson-block #feedback-area .feedback-correct { background-color: color-mix(in srgb, var(--accent-green) 15%, transparent); color: var(--accent-green-hover); border: 1px solid var(--accent-green); }
-        .lesson-block #feedback-area .feedback-incorrect { background-color: color-mix(in srgb, var(--accent-red) 15%, transparent); color: var(--accent-red-hover); border: 1px solid var(--accent-red); }
+        .lesson-block #feedback-area p { font-weight: 500; padding: 0.85rem 1.1rem; border-radius: 0.6rem; animation: feedbackPop 0.4s ease-out; }
+        .lesson-block #feedback-area .feedback-correct { 
+            background-color: color-mix(in srgb, var(--accent-green) 20%, transparent); 
+            color: var(--accent-green-hover); border: 1px solid var(--accent-green);
+            animation: feedbackCelebration 0.6s ease-out; 
+        }
+        .lesson-block #feedback-area .feedback-incorrect { background-color: color-mix(in srgb, var(--accent-red) 20%, transparent); color: var(--accent-red-hover); border: 1px solid var(--accent-red); }
 
         /* Visual Aid Placeholder */
         .visual-aid-placeholder {
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            min-height: 250px;
-            background-color: color-mix(in srgb, var(--tertiary-bg) 50%, transparent);
+            min-height: 280px;
+            background-color: color-mix(in srgb, var(--tertiary-bg) 40%, transparent);
             border: 2px dashed var(--border-color);
-            border-radius: 0.75rem;
-            padding: 2rem; text-align: center;
+            border-radius: 1rem;
+            padding: 2.5rem; text-align: center;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
         .visual-aid-placeholder .lucide {
-            width: 48px; height: 48px; color: var(--text-secondary); margin-bottom: 1rem;
-            transition: color 0.5s ease;
+            width: 52px; height: 52px; color: var(--text-secondary); margin-bottom: 1.25rem;
+            transition: color 0.5s ease, transform 0.3s ease;
         }
+        .visual-aid-placeholder:hover .lucide { transform: scale(1.1) rotate(5deg); }
         .visual-aid-placeholder p { color: var(--text-secondary); font-style: italic; transition: color 0.5s ease;}
 
-        /* General Buttons */
-        #restart-course-button { /* For completion screen */
-            background: linear-gradient(95deg, var(--accent-cyan), var(--accent-magenta));
-            color: white; font-weight: 600; padding: 0.75rem 1.5rem; border-radius: 0.6rem;
-            box-shadow: 0 4px 15px var(--accent-cyan-glow), 0 2px 8px var(--accent-magenta-glow);
-            transition: all 0.25s ease; border: none;
+        #restart-course-button { 
+            background: linear-gradient(95deg, var(--accent-primary), var(--accent-secondary));
+            color: white; font-weight: 600; padding: 0.85rem 1.75rem; border-radius: 0.75rem;
+            box-shadow: 0 5px 20px var(--accent-primary-glow), 0 2px 10px var(--accent-secondary-glow), inset 0 1px 1px rgba(255,255,255,0.1);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); border: none;
         }
          #restart-course-button:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 7px 20px var(--accent-cyan-glow), 0 4px 12px var(--accent-magenta-glow);
+            transform: translateY(-4px) scale(1.04);
+            box-shadow: 0 8px 28px var(--accent-primary-glow), 0 5px 15px var(--accent-secondary-glow), inset 0 1px 1px rgba(255,255,255,0.1);
+        }
+        #restart-course-button:active {
+            transform: translateY(-1px) scale(1.01);
         }
 
 
@@ -410,12 +555,12 @@
             min-height: 80vh; display: flex; flex-direction: column;
             justify-content: center; align-items: center; text-align: center;
         }
-        #completion-section h2 { font-size: 3rem; font-weight: 800; color: var(--accent-green-hover); transition: color 0.5s ease; }
-        #completion-section p { font-size: 1.25rem; color: var(--text-secondary); margin-top: 0.5rem; transition: color 0.5s ease; }
-        #completion-section .lucide-party-popper { width: 80px; height: 80px; color: var(--accent-cyan); margin-bottom: 1rem; animation: pop 0.5s ease-out forwards, tada 1.5s 0.5s ease-in-out infinite; transition: color 0.5s ease;}
+        #completion-section h2 { font-size: 3.25rem; font-weight: 800; color: var(--accent-green-hover); transition: color 0.5s ease; letter-spacing: -0.02em; }
+        #completion-section p { font-size: 1.3rem; color: var(--text-secondary); margin-top: 0.75rem; transition: color 0.5s ease; }
+        #completion-section .lucide-party-popper { width: 88px; height: 88px; color: var(--accent-primary); margin-bottom: 1.25rem; animation: pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, tadaEnhanced 1.8s 0.6s ease-in-out infinite; transition: color 0.5s ease;} /* Enhanced tada */
 
-        .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .animate-on-scroll.slide-up { transform: translateY(50px); }
+        .animate-on-scroll { opacity: 0; transition: opacity 0.9s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.9s cubic-bezier(0.165, 0.84, 0.44, 1); }
+        .animate-on-scroll.slide-up { transform: translateY(60px); } /* More pronounced slide */
         .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0) translateX(0); }
 
     </style>
@@ -427,10 +572,13 @@
                 <h1>Gemini Skills</h1>
                 <p>Workspace Booster</p>
             </div>
-            <button id="theme-toggle-button" aria-label="Toggle theme">
-                <i data-lucide="sun" id="theme-icon-sun"></i>
-                <i data-lucide="moon" id="theme-icon-moon" class="hidden"></i>
-            </button>
+            <div id="theme-toggle-container">
+                <button id="theme-toggle-button" aria-label="Toggle theme">
+                    <i data-lucide="sun" id="theme-icon-sun"></i>
+                    <i data-lucide="moon" id="theme-icon-moon"></i>
+                </button>
+                <span id="theme-welcome-text"></span>
+            </div>
             <ul id="module-navigation-list">
                 <!-- Module links will be injected here by JS -->
             </ul>
@@ -476,12 +624,12 @@ function replaceLucideIcons() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const courseData = [
+    const courseData = [ // Ensure this uses your full dataset
         {
             moduleId: "gemini-fundamentals",
-            moduleTitle: "Gemini: The Foundation", // Shorter title
+            moduleTitle: "Gemini: The Foundation", 
             moduleDescription: "Grasp the core concepts of Gemini and its transformative power in your daily Google Workspace tasks.",
-            moduleIcon: "atom", // Lucide icon name
+            moduleIcon: "atom", 
             lessons: [
                 {
                     lessonId: "fundamentals-1",
@@ -505,7 +653,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Accessing Gemini: UI & Interactions",
                     instruction: `<p>Gemini's intelligence is woven into the fabric of each Workspace app, making its features intuitive to access. Familiarize yourself with these common interaction points:</p><ul><li>✨ **The Sparkle Icon:** This ubiquitous symbol is your primary cue for Gemini-powered features, often found on buttons or within toolbars, inviting you to leverage AI.</li><li><strong>Contextual Action Buttons:</strong> Look for explicit prompts like 'Help me write,' 'Help me organize,' or 'Help me visualize.' These buttons trigger specific Gemini capabilities tailored to your current task.</li><li><strong>Dedicated Side Panels/Panes:</strong> Certain applications may offer a persistent Gemini panel, providing ongoing assistance and a conversational interface.</li><li><strong>@-Mentions for Quick Actions:** In collaborative environments like Docs or Chat, typing <code>@gemini</code> followed by your request can often invoke direct AI actions.</li></ul><p>Note: The precise appearance and availability of Gemini features can be influenced by your enterprise administrator's settings and ongoing Google updates.</p>`,
                     example: `In Google Docs, clicking a ✨ button might offer to draft the next paragraph or summarize a section. In Gmail, a 'Summarize this thread' button with the sparkle icon could appear above lengthy conversations. Within Sheets, a dedicated Gemini side panel could help you generate complex formulas from natural language queries.`,
-                    // No imagePrompt here, this lesson is more conceptual about UI patterns
                     quiz: {
                         question: "What is a primary visual indicator for Gemini-powered features within Google Workspace applications?",
                         options: [
@@ -542,7 +689,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moduleId: "gemini-gmail",
             moduleTitle: "Gmail: AI-Powered Email",
             moduleDescription: "Revolutionize your inbox. Learn to draft, summarize, and manage emails with unparalleled AI efficiency in Gmail.",
-            moduleIcon: "mail-check", // More specific icon
+            moduleIcon: "mail-check", 
             lessons: [
                 {
                     lessonId: "gmail-1",
@@ -586,7 +733,7 @@ document.addEventListener('DOMContentLoaded', () => {
             moduleId: "gemini-slides",
             moduleTitle: "Slides: AI-Enhanced Presentations",
             moduleDescription: "Design compelling presentations with AI assistance for outlines, content, and unique visuals in Google Slides.",
-            moduleIcon: "presentation", // Lucide icon name
+            moduleIcon: "presentation", 
             lessons: [
                 {
                     lessonId: "slides-1",
@@ -606,13 +753,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     },
                     completed: false
                 },
-                // Add more slides lessons here
             ]
         }
-        // ... Add ALL other modules and their lessons here, ensuring each module has:
-        // moduleId, moduleTitle, moduleDescription, moduleIcon, and an array of lessons.
-        // Each lesson needs: lessonId, title, instruction, example, quiz (with question, options, correctAnswer), completed status.
-        // Add 'imagePrompt' to lessons where a visual placeholder is desired.
     ];
 
     const scrollContainer = document.getElementById('scroll-container');
@@ -622,50 +764,67 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle-button');
     const themeIconSun = document.getElementById('theme-icon-sun');
     const themeIconMoon = document.getElementById('theme-icon-moon');
+    const themeWelcomeText = document.getElementById('theme-welcome-text');
 
+    const themes = ['dark-cyber', 'light-cyber', 'dark-zenith', 'light-zenith'];
+    let currentThemeIndex = 0; 
 
     // --- Theme Toggle ---
-    function setTheme(theme) {
-        if (theme === 'light') {
-            document.body.classList.add('light-mode');
-            if(themeIconSun) themeIconSun.classList.add('hidden');
-            if(themeIconMoon) themeIconMoon.classList.remove('hidden');
-        } else {
-            document.body.classList.remove('light-mode');
-            if(themeIconSun) themeIconSun.classList.remove('hidden');
-            if(themeIconMoon) themeIconMoon.classList.add('hidden');
+    function applyTheme(themeName, isInitialLoad = false) {
+        document.body.className = ''; 
+        document.body.classList.add(themeName); 
+
+        const isLight = themeName.includes('light');
+        
+        if(themeIconSun) {
+            themeIconSun.style.transform = isLight ? 'rotate(0deg) scale(1) translateY(0%)' : 'rotate(-180deg) scale(0) translateY(50%)';
+            themeIconSun.style.opacity = isLight ? '1' : '0';
         }
-        // Store preference
+        if(themeIconMoon) {
+            themeIconMoon.style.transform = isLight ? 'rotate(180deg) scale(0) translateY(-50%)' : 'rotate(0deg) scale(1) translateY(0%)';
+            themeIconMoon.style.opacity = isLight ? '0' : '1';
+        }
+        
+        if(themeWelcomeText && !isInitialLoad){ // Only show welcome text on manual toggle
+            let welcomeMsg = "";
+            if (themeName.includes('dark')) {
+                welcomeMsg = themeName.includes('cyber') ? "Embrace the Matrix!" : "Welcome to the Shadows.";
+            } else {
+                welcomeMsg = themeName.includes('cyber') ? "Bright Future!" : "Serenity Now.";
+            }
+            themeWelcomeText.textContent = welcomeMsg;
+            themeWelcomeText.classList.add('visible');
+            setTimeout(() => {
+                if(themeWelcomeText) themeWelcomeText.classList.remove('visible');
+            } , 2500); 
+        }
+
         try {
-            localStorage.setItem('geminiSkillsTheme', theme);
-        } catch (e) {
-            console.warn("Could not save theme preference to localStorage.");
-        }
+            localStorage.setItem('geminiSkillsThemeIndex', currentThemeIndex.toString());
+        } catch (e) { console.warn("Could not save theme preference."); }
         replaceLucideIcons(); 
     }
 
     if (themeToggleButton) {
         themeToggleButton.addEventListener('click', () => {
-            if (document.body.classList.contains('light-mode')) {
-                setTheme('dark');
-            } else {
-                setTheme('light');
-            }
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(`theme-${themes[currentThemeIndex]}`);
         });
     }
     
     function loadSavedTheme() {
+        let savedThemeIdx = 0; 
         try {
-            const savedTheme = localStorage.getItem('geminiSkillsTheme');
-            if (savedTheme) {
-                setTheme(savedTheme);
-            } else {
-                setTheme('dark'); // Default to dark if no preference saved
+            const storedThemeIdx = localStorage.getItem('geminiSkillsThemeIndex');
+            if (storedThemeIdx !== null) {
+                 savedThemeIdx = parseInt(storedThemeIdx, 10);
+                 if (isNaN(savedThemeIdx) || savedThemeIdx < 0 || savedThemeIdx >= themes.length) {
+                    savedThemeIdx = 0; 
+                 }
             }
-        } catch (e) {
-            console.warn("Could not load theme preference from localStorage, defaulting to dark.");
-            setTheme('dark');
-        }
+        } catch (e) { console.warn("Could not load theme preference."); }
+        currentThemeIndex = savedThemeIdx;
+        applyTheme(`theme-${themes[currentThemeIndex]}`, true); // Pass true for initial load
     }
 
 
@@ -675,8 +834,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
             } else {
-                // Optional: remove 'is-visible' to re-trigger animation on scroll back
-                // entry.target.classList.remove('is-visible');
+                 // entry.target.classList.remove('is-visible'); 
             }
         });
     }, { threshold: 0.15 }); 
@@ -697,10 +855,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const link = document.createElement('a');
             link.href = `#module-${module.moduleId}`;
             link.className = 'sidebar-module-link';
+            // Updated progress bar structure in link.innerHTML
             link.innerHTML = `
                 <i data-lucide="${module.moduleIcon || 'book-open'}"></i>
                 <span>${module.moduleTitle}</span>
-                <span class="module-progress" id="progress-${module.moduleId}">0%</span>
+                <div class="module-progress" id="progress-container-${module.moduleId}" title="${module.moduleTitle} Progress">
+                    <div class="module-progress-bar-inner" id="progress-bar-${module.moduleId}"></div>
+                </div>
+                <span class="module-progress-text" id="progress-text-${module.moduleId}">0%</span>
             `;
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -727,9 +889,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
 
             module.lessons.forEach((lesson, lessonIdx) => {
-                // Determine if the lesson is the last in its module AND the last module overall
                 const isLastLessonOverall = (moduleIdx === courseData.length - 1) && (lessonIdx === module.lessons.length - 1);
-
                 moduleHTML += `
                     <div class="lesson-block" data-module-index="${moduleIdx}" data-lesson-index="${lessonIdx}">
                         <h4 id="lesson-title">${lesson.title}</h4>
@@ -738,7 +898,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div id="visual-aid-section" class="mb-6">
                             <div class="visual-aid-container-lesson visual-aid-placeholder my-4">
                                 <i data-lucide="image"></i>
-                                <p>Engaging visual content placeholder.</p>
+                                <p>Visual content to enhance this lesson.</p>
                             </div>
                         </div>` : ''}
 
@@ -750,7 +910,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>` : ''}
                         ${lesson.quiz ? `
                         <div id="quiz-area" class="mt-6 pt-4 border-t border-[var(--border-color)]">
-                            <h5 id="quiz-question-title" class="text-md font-semibold mb-3 flex items-center"><i data-lucide="help-circle" class="mr-2 h-5 w-5 text-[var(--accent-cyan)]"></i>Test Your Knowledge:</h5>
+                            <h5 id="quiz-question-title" class="text-md font-semibold mb-3 flex items-center"><i data-lucide="help-circle" class="mr-2 h-5 w-5 text-[var(--accent-primary)]"></i>Test Your Knowledge:</h5>
                             <p id="quiz-question" class="mb-4">${lesson.quiz.question}</p>
                             <div class="quiz-options-lesson grid grid-cols-1 sm:grid-cols-2 gap-3">
                                 ${lesson.quiz.options.map(opt => `<button class="lesson-option">${opt}</button>`).join('')}
@@ -803,7 +963,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const lessonIndex = parseInt(lessonBlock.dataset.lessonIndex);
             const lesson = courseData[moduleIndex].lessons[lessonIndex];
 
-            // Quiz Options (only if quiz exists)
             if (lesson.quiz) {
                 const quizOptionsContainer = lessonBlock.querySelector('.quiz-options-lesson');
                 const optionButtons = quizOptionsContainer.querySelectorAll('.lesson-option');
@@ -815,7 +974,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         handleQuizOptionSelect(button, button.textContent, lesson, optionButtons, feedbackMessageEl, nextButtonContainer, moduleIndex, lessonIndex);
                     };
                 });
-                if(lesson.completed){ // If re-rendering and lesson was already complete
+                if(lesson.completed){ 
                     feedbackMessageEl.innerHTML = '<strong>Lesson Completed!</strong> You can review or scroll on.';
                     feedbackMessageEl.className = 'feedback-message-lesson text-xs p-2 rounded-md feedback-correct';
                     optionButtons.forEach(btn => {
@@ -826,7 +985,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } else {
                 const nextButtonContainer = lessonBlock.querySelector('.next-lesson-button-container');
-                showNextOrComplete(nextButtonContainer, moduleIndex, lessonIndex, true); // Treat as "completed" for flow if no quiz
+                showNextOrComplete(nextButtonContainer, moduleIndex, lessonIndex, true); 
             }
         });
     }
@@ -851,7 +1010,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         showNextOrComplete(nextBtnContainer, moduleIdx, lessonIdx, lesson.completed);
         updateModuleProgressDisplay(courseData[moduleIdx].moduleId);
-        if(lesson.completed) checkOverallCompletion(); // Check if this completion finishes the course
+        if(lesson.completed) {
+            checkOverallCompletion(); 
+        }
     }
     
     function showNextOrComplete(container, currentModuleIdx, currentLessonIdx, isCompleted) {
@@ -860,28 +1021,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const isLastLessonInModule = currentLessonIdx === courseData[currentModuleIdx].lessons.length - 1;
         const isLastOverall = container.dataset.isLastOverall === "true";
 
-
         const p = document.createElement('p');
         p.className = 'font-semibold mt-4 text-sm';
 
         if (isCompleted) {
-            p.classList.add('text-[var(--accent-green-hover)]'); // Use themed color
-            p.innerHTML = 'Lesson Complete! <i data-lucide="check-circle" class="inline w-4 h-4"></i> ';
+            p.classList.add('text-[var(--accent-green-hover)]'); 
+            p.innerHTML = 'Lesson Complete! <i data-lucide="check-circle" class="inline w-4 h-4 animate-check"></i> ';
             
             if (isLastOverall) {
                  p.innerHTML += ' This is the final lesson!';
-                 // The checkOverallCompletion will handle showing the main completion section
             } else if (isLastLessonInModule) {
                 p.innerHTML += 'Module Finished! Scroll to the next one.';
             } else {
                  p.innerHTML += 'Scroll down for the next lesson.';
             }
-        } else {
-            // If quiz failed, no specific "next" message here, feedbackEl handles it.
-            // If it's an informational lesson initially, this part won't be hit with isCompleted=false
         }
         
-        if (p.innerHTML.trim() !== '') { // Only append if there's content
+        if (p.innerHTML.trim() !== '') { 
              container.appendChild(p);
              replaceLucideIcons();
         }
@@ -891,19 +1047,26 @@ document.addEventListener('DOMContentLoaded', () => {
         const moduleData = courseData.find(m => m.moduleId === moduleId);
         if (!moduleData) return;
 
-        // A lesson is considered "done" for progress if it's marked completed OR if it has no quiz.
         const doneLessons = moduleData.lessons.filter(l => l.completed || !l.quiz).length;
         const totalLessons = moduleData.lessons.length;
         const progress = totalLessons > 0 ? Math.round((doneLessons / totalLessons) * 100) : 0;
         
-        const progressEl = document.getElementById(`progress-${moduleId}`);
-        if (progressEl) {
-            progressEl.textContent = `${progress}%`;
-            const linkEl = progressEl.closest('.sidebar-module-link');
+        const progressTextEl = document.getElementById(`progress-text-${moduleId}`);
+        const progressBarEl = document.getElementById(`progress-bar-${moduleId}`);
+
+        if (progressTextEl) progressTextEl.textContent = `${progress}%`;
+        if (progressBarEl) {
+            requestAnimationFrame(() => { 
+                 progressBarEl.style.width = `${progress}%`;
+            });
+        }
+        
+        const linkEl = document.querySelector(`.sidebar-module-link[href="#module-${moduleId}"]`);
+        if (linkEl) {
             if (progress === 100) {
-                linkEl?.classList.add('module-complete-visual'); 
+                linkEl.classList.add('module-complete-visual'); 
             } else {
-                 linkEl?.classList.remove('module-complete-visual');
+                linkEl.classList.remove('module-complete-visual');
             }
         }
     }
@@ -914,27 +1077,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkOverallCompletion() {
         const allDone = courseData.every(module => 
-            module.lessons.every(lesson => lesson.completed || !lesson.quiz) // Non-quiz lessons count as complete
+            module.lessons.every(lesson => lesson.completed || !lesson.quiz)
         );
-        if (allDone) {
+        if (allDone && completionSection) { 
             completionSection.classList.remove('hidden');
             completionSection.scrollIntoView({ behavior: 'smooth' });
-            // Animate completion section elements
             completionSection.querySelectorAll('.lucide-party-popper, h2, p, button').forEach(el => {
-                el.classList.add('animate-on-scroll', 'slide-up', 'is-visible'); // Force visible
+                el.classList.add('animate-on-scroll', 'slide-up', 'is-visible');
             });
-
         }
     }
 
     function initializeApp() {
-        loadSavedTheme(); // Load theme preference first
+        loadSavedTheme(); 
 
         renderCourse();
         observeModuleSections(); 
         replaceLucideIcons(); 
         
-        // Hero section animations
         setTimeout(() => {
             const heroH2 = document.querySelector('#hero-section h2');
             const heroSubtitle = document.querySelector('#hero-section .hero-subtitle');
@@ -943,22 +1103,24 @@ document.addEventListener('DOMContentLoaded', () => {
             if(heroH2) heroH2.classList.add('is-visible');
             if(heroSubtitle) heroSubtitle.classList.add('is-visible');
             if(scrollIndicator) scrollIndicator.classList.add('is-visible');
-        }, 100); // Short delay for effect
+        }, 100); 
 
         if (restartCourseButton) {
             restartCourseButton.onclick = () => {
                 courseData.forEach(m => m.lessons.forEach(l => l.completed = false));
-                completionSection.classList.add('hidden');
+                if(completionSection) completionSection.classList.add('hidden');
                 if(scrollContainer) scrollContainer.scrollTop = 0; 
                 renderCourse(); 
                 observeModuleSections();
                 updateActiveModuleNav(courseData.length > 0 ? `module-${courseData[0].moduleId}` : ''); 
-                loadSavedTheme(); // Re-apply theme after re-render, which might reset body class
-                // Re-trigger hero animation for restart
+                loadSavedTheme(); 
                  setTimeout(() => {
-                    document.querySelector('#hero-section h2')?.classList.add('is-visible');
-                    document.querySelector('#hero-section .hero-subtitle')?.classList.add('is-visible');
-                    document.querySelector('#hero-section .scroll-down-indicator')?.classList.add('is-visible');
+                    const heroH2 = document.querySelector('#hero-section h2');
+                    const heroSubtitle = document.querySelector('#hero-section .hero-subtitle');
+                    const scrollIndicator = document.querySelector('#hero-section .scroll-down-indicator');
+                    if(heroH2) heroH2.classList.add('is-visible');
+                    if(heroSubtitle) heroSubtitle.classList.add('is-visible');
+                    if(scrollIndicator) scrollIndicator.classList.add('is-visible');
                 }, 100);
             };
         }
