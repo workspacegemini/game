@@ -556,6 +556,14 @@
         #mobile-menu-toggle {
             display: none; /* Hide on desktop by default */
         }
+
+        /* --- CSS-based Icon Toggling --- */
+        #sticky-sidebar-nav:not(.is-open) #menu-close-icon { display: none; }
+        #sticky-sidebar-nav.is-open #menu-open-icon { display: none; }
+        /* When JS is disabled or slow, the close icon is hidden by default */
+        #menu-close-icon { display: none; }
+        #sticky-sidebar-nav.is-open #menu-close-icon { display: inline-block; }
+        #sticky-sidebar-nav:not(.is-open) #menu-open-icon { display: inline-block; }
     </style>
 </head>
 <body class="theme-dark-zenith">
@@ -568,7 +576,7 @@
                 </div>
                 <button id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                     <i data-lucide="menu" id="menu-open-icon" class="menu-icon"></i>
-                    <i data-lucide="x" id="menu-close-icon" class="menu-icon hidden"></i>
+                    <i data-lucide="x" id="menu-close-icon" class="menu-icon"></i>
                 </button>
             </div>
             <div id="sidebar-collapsible-content">
@@ -1650,15 +1658,6 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuToggle.addEventListener('click', () => {
                 const isOpen = sidebarNav.classList.toggle('is-open');
                 mobileMenuToggle.setAttribute('aria-expanded', isOpen);
-
-                const menuOpenIcon = document.getElementById('menu-open-icon');
-                const menuCloseIcon = document.getElementById('menu-close-icon');
-
-                if (menuOpenIcon) menuOpenIcon.classList.toggle('hidden', isOpen);
-                if (menuCloseIcon) menuCloseIcon.classList.toggle('hidden', !isOpen);
-                
-                // This call is crucial to render the icon that was just made visible
-                replaceLucideIcons();
             });
         }
 
@@ -1667,15 +1666,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.target.closest('.sidebar-module-link') && sidebarNav.classList.contains('is-open')) {
                     sidebarNav.classList.remove('is-open');
                     mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                    
-                    const menuOpenIcon = document.getElementById('menu-open-icon');
-                    const menuCloseIcon = document.getElementById('menu-close-icon');
-
-                    if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
-                    if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
-
-                    // This call is crucial to render the icon that was just made visible
-                    replaceLucideIcons();
                 }
             });
         }
