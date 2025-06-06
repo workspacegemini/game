@@ -1651,19 +1651,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const isOpen = sidebarNav.classList.toggle('is-open');
                 mobileMenuToggle.setAttribute('aria-expanded', isOpen);
 
-                // Get elements by ID inside the handler to prevent stale references
-                // after Lucide replaces the `i` tags with `svg` tags.
                 const menuOpenIcon = document.getElementById('menu-open-icon');
                 const menuCloseIcon = document.getElementById('menu-close-icon');
 
                 if (menuOpenIcon) menuOpenIcon.classList.toggle('hidden', isOpen);
                 if (menuCloseIcon) menuCloseIcon.classList.toggle('hidden', !isOpen);
+                
+                // This call is crucial to render the icon that was just made visible
+                replaceLucideIcons();
             });
         }
 
         if (moduleNavList) {
             moduleNavList.addEventListener('click', (e) => {
-                // Close menu when a module is selected on mobile
                 if (e.target.closest('.sidebar-module-link') && sidebarNav.classList.contains('is-open')) {
                     sidebarNav.classList.remove('is-open');
                     mobileMenuToggle.setAttribute('aria-expanded', 'false');
@@ -1673,6 +1673,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
                     if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
+
+                    // This call is crucial to render the icon that was just made visible
+                    replaceLucideIcons();
                 }
             });
         }
