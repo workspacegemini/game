@@ -281,10 +281,65 @@
             .content-padding { padding: 3rem 2rem; }
             #sticky-sidebar-nav {
                 width: 100%; height: auto; position: relative; z-index: 101;
-                border-right: none; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;
+                border-right: none; border-bottom: 1px solid var(--border-color);
+                padding-bottom: 0; /* Let header have its own padding */
             }
-            #module-navigation-list { flex-direction: row; overflow-x: auto; padding-bottom: 0.5rem; gap: 0.5rem; }
-            .sidebar-module-link { flex: 0 0 auto; white-space: nowrap; }
+            #sticky-sidebar-nav.is-open {
+                padding-bottom: 1rem; /* Add padding back when menu is open */
+            }
+            #sidebar-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.5rem 0.25rem;
+                padding-bottom: 1.75rem;
+            }
+            #sidebar-header > div:first-child h1 { margin-bottom: 0; }
+            #sidebar-header > div:first-child p { margin-bottom: 0; }
+
+            #mobile-menu-toggle {
+                display: flex; /* Show the hamburger menu */
+                align-items: center;
+                justify-content: center;
+                background-color: var(--tertiary-bg);
+                border: 1px solid var(--border-color);
+                border-radius: 0.65rem;
+                padding: 0.6rem;
+                cursor: pointer;
+                transition: all 0.25s var(--ease-out-cubic);
+            }
+             #mobile-menu-toggle:hover {
+                border-color: var(--accent-primary);
+                background-color: color-mix(in srgb, var(--tertiary-bg) 75%, var(--accent-primary) 25%);
+            }
+            #mobile-menu-toggle .menu-icon {
+                width: 22px;
+                height: 22px;
+                color: var(--text-interactive);
+                transition: color 0.25s var(--ease-out-cubic);
+            }
+            #mobile-menu-toggle:hover .menu-icon {
+                color: var(--accent-primary-hover);
+            }
+
+            #sidebar-collapsible-content {
+                display: none;
+            }
+            #sticky-sidebar-nav.is-open #sidebar-collapsible-content {
+                display: block;
+                animation: fadeInSlideUpInitial 0.4s var(--ease-out-quart) backwards;
+            }
+            #module-navigation-list {
+                flex-direction: column;
+                overflow-x: hidden;
+                padding-bottom: 0;
+                gap: 0;
+            }
+            .sidebar-module-link {
+                flex: 1 1 auto;
+                white-space: normal;
+                transform: none !important;
+            }
             #main-content-area { padding-left: 0; }
             #app-wrapper { flex-direction: column; }
         }
@@ -499,18 +554,26 @@
     <div id="app-wrapper">
         <nav id="sticky-sidebar-nav">
             <div id="sidebar-header">
-                <h1>Gemini Skills</h1>
-                <p>Workspace Booster</p>
-            </div>
-            <div id="theme-cycler-container">
-                <button id="theme-cycle-button" aria-live="polite">
-                    <i data-lucide="palette"></i>
-                    <span id="current-theme-name-display">Theme</span>
+                <div>
+                    <h1>Gemini Skills</h1>
+                    <p>Workspace Booster</p>
+                </div>
+                <button id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <i data-lucide="menu" id="menu-open-icon" class="menu-icon"></i>
+                    <i data-lucide="x" id="menu-close-icon" class="menu-icon hidden"></i>
                 </button>
             </div>
-            <ul id="module-navigation-list">
-                <!-- Module links will be injected here by JS -->
-            </ul>
+            <div id="sidebar-collapsible-content">
+                <div id="theme-cycler-container">
+                    <button id="theme-cycle-button" aria-live="polite">
+                        <i data-lucide="palette"></i>
+                        <span id="current-theme-name-display">Theme</span>
+                    </button>
+                </div>
+                <ul id="module-navigation-list">
+                    <!-- Module links will be injected here by JS -->
+                </ul>
+            </div>
         </nav>
 
         <main id="main-content-area">
@@ -1190,6 +1253,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeCycleButton = document.getElementById('theme-cycle-button');
     const currentThemeNameDisplay = document.getElementById('current-theme-name-display');
 
+    // Mobile menu elements
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const sidebarNav = document.getElementById('sticky-sidebar-nav');
+    const menuOpenIcon = document.getElementById('menu-open-icon');
+    const menuCloseIcon = document.getElementById('menu-close-icon');
+
     // --- State ---
     let currentActiveModuleId = null;
     const themes = ['dark-zenith', 'light-zenith'];
@@ -1567,6 +1636,32 @@ document.addEventListener('DOMContentLoaded', () => {
         renderSidebarNav();
         resetCourseState();
         restartCourseButton.addEventListener('click', resetCourseState);
+
+        // --- Mobile Menu Logic ---
+        if (mobileMenuToggle) {
+            mobileMenuToggle.addEventListener('click', () => {
+                const isOpen = sidebarNav.classList.toggle('is-open');
+                mobileMenuToggle.setAttribute('aria-expanded', isOpen);
+                if (menuOpenIcon) menuOpenIcon.classList.toggle('hidden', isOpen);
+                if (menuCloseIcon) menuCloseIcon.classList.toggle('hidden', !isOpen);
+                // We need to call this here because the icons are created dynamically
+                replaceLucideIcons();
+            });
+        }
+
+        if (moduleNavList) {
+            moduleNavList.addEventListener('click', (e) => {
+                // Close menu when a module is selected on mobile
+                if (e.target.closest('.sidebar-module-link') && sidebarNav.classList.contains('is-open')) {
+                    sidebarNav.classList.remove('is-open');
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                    if (menuOpenIcon) menuOpenIcon.classList.remove('hidden');
+                    if (menuCloseIcon) menuCloseIcon.classList.add('hidden');
+                     // We need to call this here because the icons are created dynamically
+                    replaceLucideIcons();
+                }
+            });
+        }
     }
 
     initializeApp();
