@@ -636,25 +636,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     lessonId: "game-gs-1",
                     title: "Intro: Gemini in Your Workspace ✨",
                     instruction: `<p>Welcome! Gemini is an AI-powered assistant integrated directly into your Google Workspace apps (Gmail, Docs, Sheets, Slides, Meet, etc.). Its primary goal is to help you work smarter, faster, and more creatively.</p><p><strong>What Gemini Can Do for You:</strong></p><ul><li><strong>Draft & Write:</strong> Get help creating emails, document sections, outlines, and more.</li><li><strong>Summarize:</strong> Quickly understand long documents or email threads.</li><li><strong>Brainstorm:</strong> Generate ideas for projects, content, or problem-solving.</li><li><strong>Refine:</strong> Improve your existing text by changing tone, length, or clarity.</li><li><strong>Organize:</strong> Assist with structuring information, like creating tables in Sheets.</li></ul><p>Think of Gemini as a versatile partner. As you explore these lessons, you'll learn how to make the most of its capabilities. Remember, while Gemini is powerful, you are always in control and responsible for the final output.</p>`,
+                    visualAid: { src: './media/1.1.gif', alt: 'Gemini sparkle icon in Google Workspace apps' },
                     example: `You're starting a new project proposal in Google Docs. You can ask Gemini: "Help me create an outline for a project proposal to launch a new internal communication platform. Include sections for objectives, target audience, key features, and timeline."`,
+                    
                 },
                 {
                     lessonId: "game-gs-2",
                     title: "Finding Gemini in Your Apps 📍",
                     instruction: `<p>To use Gemini, you first need to know where to find it. Google has made it accessible within your Workspace tools, usually via a distinct icon or button.</p><p><strong>Common Access Points:</strong></p><ul><li><strong>The Gemini Icon (✨):</strong> Look for a "sparkle" icon. Clicking it often opens the Gemini side panel.</li><li><strong>Contextual Buttons:</strong> In apps like Gmail or Docs, you might see buttons like "Help me write," "Help me organize," or "Summarize" that invoke Gemini.</li><li><strong>Side Panel:</strong> In Docs, Sheets, and Slides, Gemini assistance is frequently available in a right-hand side panel.</li><li><strong>Gmail Compose Window:</strong> When writing or replying to emails.</li><li><strong>Meet Menus:</strong> AI features in Meet are often in the "More options" (...) or "Effects" panels.</li></ul><p>The exact placement can evolve with updates, but it's designed to be intuitive and available where you need it for your current task.</p>`,
                     example: `In Google Slides, you want to generate an image for your current slide. You would look for the Gemini icon ✨ in the right-hand sidebar to open the panel and type your image request.`,
+                    visualAid: { src: './media/1.2.1.png', alt: 'Gemini icon in Gmail' },
+                    visualAid: { src: './media/1.2.2.png', alt: 'Gemini icon in Sheets' },
+                    visualAid: { src: './media/1.2.3.png', alt: 'Gemini icon in Slides' },
+                    
                 },
                 {
                     lessonId: "game-gs-3",
                     title: "Your First Prompt & Basic Interaction 💬",
                     instruction: `<p>Interacting with Gemini involves giving it instructions or asking questions – these are called "prompts." For your first few tries, keep your prompts clear and simple to understand how Gemini responds.</p><p><strong>Tips for Simple Prompts:</strong></p><ul><li><strong>Be Direct:</strong> Start with a clear action verb if you want Gemini to do something (e.g., "List...", "Explain...", "Summarize...").</li><li><strong>Focus on One Task:</strong> Avoid asking for too many different things in a single very short prompt.</li></ul><p><strong>Example Simple Prompts:</strong></p><ul><li><code>"List three advantages of using cloud storage."</code></li><li><code>"Explain the concept of 'project scope' in one sentence."</code></li><li><code>"What are some common time management techniques?"</code></li></ul><p>After you submit your prompt, Gemini will process it and provide a response in the panel. Always review this response!</p>`,
                     example: `You're in the Gemini panel in Docs and type: "Brainstorm five potential names for a new internal newsletter." Gemini will then list five suggestions for you to consider.`,
+                    visualAid: { src: './media/1.3.gif', alt: 'Gemini interacting with a user prompt' }
                 },
                 {
                     lessonId: "game-gs-4",
                     title: "Interpreting & Refining Responses 🔄",
                     instruction: `<p>Gemini's first response is a starting point. Effective use often involves an iterative process – like a conversation – where you refine its suggestions.</p><p><strong>After Gemini responds, ask yourself:</strong></p><ul><li>Is it accurate and relevant?</li><li>Is the tone and style appropriate?</li><li>Is it too long, too short, or missing something?</li></ul><p><strong>Common Refinement Prompts:</strong></p><ul><li><code>"Make that more concise."</code></li><li><code>"Rewrite this in a formal tone."</code></li><li><code>"Can you elaborate on the second point?"</code></li><li><code>"Give me another option for that."</code></li></ul><p>This back-and-forth helps you tailor the AI's output precisely to your needs. Remember, you are accountable for the final accuracy of the content.</p>`,
                     example: `Gemini drafts an email that's a bit too wordy. You follow up with the prompt: "Shorten this email to focus only on the main action item and the deadline."`,
+                    visualAid: { src: './media/1.4.png', alt: 'Gemini refining a document draft' }
                 },
                 {
                     lessonId: "game-gs-5",
@@ -667,6 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Giving Gemini Context (Safely!) 🔗",
                     instruction: `<p>Gemini provides more relevant assistance when it has context about your task. You can provide this context in a few ways, always keeping data safety in mind.</p><p><strong>Methods for Providing Context:</strong></p><ul><li><strong>Implicit Context (Open File):</strong> Often, Gemini can understand the content of the document, email, or sheet you have open and active when you prompt it from the side panel. For example, asking "Summarize this" in an open Doc.</li><li><strong>Referencing Files (@mentions):</strong> In some apps (like Docs, Gmail), you can type <code>@</code> followed by a file name to allow Gemini to access content from that specific Drive file. Example: <code>"Summarize the key recommendations from @[Q1 Sales Strategy.gdoc]"</code>.</li></ul><p><strong>Crucial Safety Note:</strong> Before asking Gemini to process information from *any* document or file (whether open or @mentioned), **you must ensure that the file itself does not contain sensitive PII or confidential company information** that should not be processed by an AI. You are responsible for the data you direct Gemini to access.</p>`,
                     example: `You are writing a project update email in Gmail. You prompt Gemini: "Help me draft this update. Include the main action items from our last meeting, which are in @[Project Phoenix Meeting Notes - May 28.gdoc]." (You've already ensured the meeting notes doc is safe to use.)`,
+                    visualAid: { src: './media/1.6.gif', alt: 'Gemini refining a document draft' }
                 }
             ],
             moduleQuiz: {
@@ -692,6 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Core Elements of a Great Prompt ✨",
                     instruction: `<p>To get the best results from Gemini, structure your prompts thoughtfully. While not always needed, understanding these five core elements (often remembered by an acronym like <strong>PTCFT</strong>) can make your prompts much more powerful, especially for complex requests:</p><ul><li><strong>Persona:</strong> Who should Gemini act as? (e.g., "Act as a marketing expert...") This sets the style and expertise.</li><li><strong>Task:</strong> What specific action do you want Gemini to perform? (e.g., "Draft an email...", "Summarize this text...", "List three ideas...") Use clear action verbs.</li><li><strong>Context:</strong> What background information does Gemini need to understand your request fully? (e.g., "for a new client in the tech industry," "based on our Q1 sales data"). Remember to <strong>never include sensitive PII or confidential company data.</strong></li><li><strong>Format:</strong> How do you want the information presented? (e.g., "as a bulleted list," "in a table with columns for X and Y," "as a short paragraph").</li><li><strong>Tone:</strong> What style should the response have? (e.g., "formal," "friendly and encouraging," "neutral and objective," "persuasive").</li></ul><p>Consciously thinking about these elements will help you craft prompts that lead to more accurate and useful outputs.</p>`,
                     example: `A well-structured prompt: "Act as an experienced project manager (Persona). Draft a three-point agenda (Task & Format) for a weekly project sync meeting for 'Project Alpha' (Context). The tone should be professional and concise (Tone)."`,
+                    visualAid: { src: './media/2.1.png', alt: 'Illustration of prompt elements like persona, task, context, format, and tone' }
                 },
                 {
                     lessonId: "game-mp-2",
@@ -710,12 +720,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Pro Tip: Chain Prompts for Complex Tasks 🔗",
                     instruction: `<p>For intricate or multi-step tasks, "chain prompting" is a powerful technique. Instead of one massive prompt, you break the task into smaller, sequential prompts, using Gemini's output from one step to inform the next.</p><p><strong>How it Works:</strong></p><ol><li>Define your overall goal.</li><li>Break it into logical sub-tasks.</li><li>Prompt for the first sub-task.</li><li>Use Gemini's response to help formulate your prompt for the second sub-task (e.g., "Based on the outline you just provided, draft the introduction...").</li><li>Continue until the overall goal is achieved.</li></ol><p>This gives you more control and often leads to higher quality, more detailed results for complex projects.</p>`,
                     example: `Goal: Create a short report. Prompt 1: "Brainstorm an outline for a report on employee engagement." (Gemini provides an outline) Prompt 2: "Using the first section of that outline ('Introduction'), draft a compelling opening paragraph." (And so on for other sections...)`,
+                    visualAid: { src: './media/2.5.png', alt: 'Chain prompting' }
                 },
                 {
                     lessonId: "game-mp-5",
                     title: "Common Prompting Mistakes & Fixes 🚧",
                     instruction: `<p>Avoiding common pitfalls will make your interactions with Gemini much smoother and more effective.</p><p><strong>Common Mistakes & Solutions:</strong></p><ul><li><strong>Too Vague:</strong> Gemini gives generic answers. <strong>Fix:</strong> Be more specific, add context. (e.g., Instead of "project update," try "Draft a 3-bullet project update for Project Phoenix focusing on last week's achievements.")</li><li><strong>Not Enough Context:</strong> Output isn't relevant to your situation. <strong>Fix:</strong> Provide necessary background information (without sharing sensitive data!).</li><li><strong>Overly Complex (Too many tasks in one prompt):</strong> Gemini gets confused or misses instructions. <strong>Fix:</strong> Break it down into smaller, focused prompts (use chain prompting).</li><li><strong>Forgetting Format/Tone:</strong> Output is hard to use or sounds wrong. <strong>Fix:</strong> Specify desired format (list, table, email) and tone (formal, friendly) in your prompt.</li><li><strong>Not Reviewing:</strong> Using AI output without checking. <strong>Fix:</strong> Always critically review for accuracy and appropriateness.</li></ul>`,
                     example: `Mistake: "Tell me about that report." (Too vague, which report?) Better: "Summarize the key findings from the 'Q3 Sales Report 2024.gdoc' that I have open." (Assuming it's safe to reference).`,
+                    
                 }
             ],
             moduleQuiz: {
@@ -1373,7 +1385,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="lesson-block animate-on-scroll" style="transition-delay: ${index * 100}ms;">
                     <h4 class="lesson-title-main flex items-center"><i data-lucide="book-open" class="mr-3 h-6 w-6"></i>${lesson.title}</h4>
                     <div class="lesson-instruction">${lesson.instruction}</div>
+                    ${lesson.visualAid ? `<div class="visual-aid-container mt-6 mb-4 flex justify-center"><img src="${lesson.visualAid.src}" alt="${lesson.visualAid.alt}" class="max-w-full h-auto rounded-lg shadow-xl border border-[var(--border-color)]" style="max-height: 400px; object-fit: contain;"></div>` : ''}
                     ${lesson.example ? `<div class="lesson-example mt-6"><h5 class="font-semibold text-sm mb-2 flex items-center"><i data-lucide="lightbulb" class="mr-2 h-4 w-4 text-yellow-400"></i>Example</h5><p class="text-sm">${lesson.example}</p></div>` : ''}
+                    
                 </div>`;
         });
 
