@@ -720,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     title: "Pro Tip: Chain Prompts for Complex Tasks 🔗",
                     instruction: `<p>For intricate or multi-step tasks, "chain prompting" is a powerful technique. Instead of one massive prompt, you break the task into smaller, sequential prompts, using Gemini's output from one step to inform the next.</p><p><strong>How it Works:</strong></p><ol><li>Define your overall goal.</li><li>Break it into logical sub-tasks.</li><li>Prompt for the first sub-task.</li><li>Use Gemini's response to help formulate your prompt for the second sub-task (e.g., "Based on the outline you just provided, draft the introduction...").</li><li>Continue until the overall goal is achieved.</li></ol><p>This gives you more control and often leads to higher quality, more detailed results for complex projects.</p>`,
                     example: `Goal: Create a short report. Prompt 1: "Brainstorm an outline for a report on employee engagement." (Gemini provides an outline) Prompt 2: "Using the first section of that outline ('Introduction'), draft a compelling opening paragraph." (And so on for other sections...)`,
-                    visualAid: { src: './media/2.5.png', alt: 'Chain prompting' }
+                    visualAid: { src: './media/2.4.png', alt: 'Chain prompting' }
                 },
                 {
                     lessonId: "game-mp-5",
@@ -741,10 +741,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 userAnswers: {}, score: 0, quizSubmitted: false
             }, quizCompleted: false
         },
-        // --- Add all 15 modules here following the same structure ---
-        // NOTE: For brevity in this response, I am showing the first two complete modules.
-        // The full implementation would include all 15 parsed from the document.
-        // The rest of the modules will be added below based on the user-provided document.
         {
             moduleId: "gemini-gmail-mastery",
             moduleTitle: "Module 3: Gemini in Gmail",
@@ -1640,10 +1636,10 @@ document.addEventListener('DOMContentLoaded', () => {
         moduleContentWrapper.innerHTML = '';
         completionSection.classList.add('hidden');
         updateAllModuleProgressDisplays();
+        el.classList.remove('is-visible');
         updateActiveModuleNav(null);
         document.querySelectorAll('#hero-section .animate-on-scroll, #hero-section h2, #hero-section .hero-subtitle, #hero-section .scroll-down-indicator')
             .forEach(el => {
-                el.classList.remove('is-visible');
                 animationObserver.unobserve(el); 
                 animationObserver.observe(el);
             });
